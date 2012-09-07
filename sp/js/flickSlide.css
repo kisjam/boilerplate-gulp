@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.slider {
+}
+.slider .inner {
+	overflow:hidden;
+	width:300px;
+	margin:0 auto;
+}
+.slider .elm {
+	position:relative;
+	width:900px;
+	height:155px;
+	margin:0 auto 5px;
+}
+.slider .elm img {
+}
+.slider .elm li {
+	float:left;
+	width:300px;
+}
+.slider .controller {
+	margin:0 0 5px 0;
+	text-align:center;
+}
+.slider .controller li {
+	display:inline-block;
+	width:8px;
+	height:8px;
+	margin:0 3px;
+	background:url(/sp/imgs/common/btn_slider.png) 0 0 no-repeat;
+	background-size:8px 16px;
+}
+.slider .controller .active {
+	background-position:0 -8px;
+}
