@@ -33,15 +33,6 @@ body{
 	color:#482c17;
 }
 
-/*-- linkTxt --*/
-.linkTxt {
-	display:inline-block;
-}
-/*-- hangTxt --*/
-.hangTxt {
-	padding:0 0 0 1em;
-	text-indent:-1em;
-}
 
 /*	Link
 ------------------------------------------*/
