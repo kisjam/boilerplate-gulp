@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+//	Size
+$BaseLineHeight:1.6;
+
+
+//	Color
+//		Link
+$BaseColorLink:#605655;
+
+$cHue : hue($BaseColorLink);
+$cSaturation : saturation($BaseColorLink);
+$cLightness : lightness($BaseColorLink);
+
+$newLightness : $cLightness + 20;
+$newSaturation : $cSaturation + 20;
+
+@if $newSaturation > 100 {
+	$newSaturation : 100;
+} @else if $newSaturation <= 0 {
+	$newSaturation : 0;
+}
+@if $newLightness > 100 {
+	$newLightness : 100;
+} @else if $newLightness <= 0 {
+	$newLightness : 0;
+}
+
+$BaseColorVisited : hsl($cHue, $cSaturation, $newLightness);
+$BaseColorHover : hsl($cHue, $newSaturation, $cLightness);
+
+//		Border
+$BorderColorDotted : #d7d5d4;

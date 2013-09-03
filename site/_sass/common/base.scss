@@ -1,0 +1,192 @@
+@charset "utf-8";
+@import "compass";
+@import "valiables";
+@import "module";
+
+/*------------------------------------------
+
+	@ Style Name	/css/common/base.css
+
+--------------------------------------------
+
+		- Reset
+		- html, body
+		- Contents
+		- Module
+
+------------------------------------------*/
+
+/*------------------------------------------
+ *	Reset
+------------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,icenter,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}img{line-height:0;vertical-align:bottom;}
+
+/*------------------------------------------
+ *	html, body
+------------------------------------------*/
+html{
+	font-size: 62.5%;
+	height:10px;
+}
+body{
+	line-height: 1;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+}
+
+/*	Link
+------------------------------------------*/
+a:link {
+	color: $BaseColorLink;
+}
+a:visited {
+	color: $BaseColorVisited;
+}
+a:hover {
+	text-decoration:none;
+}
+a:active {
+}
+
+/*------------------------------------------
+ *	Contents
+------------------------------------------*/
+/*	Header
+------------------------------------------*/
+#headerGlobal {
+	$_navsp-sprite-dimensions: true;
+	@import "common/_navsp/*.png";
+	.navGlobal {
+		li {
+			a {
+				display:block;
+				text-indent: -5000px;
+			}
+		}
+		.top a {
+			@include _navsp-sprite(nav_top);
+			&.current { @include _navsp-sprite(nav_top_hover); }	
+		}
+	}
+}
+/*	Main
+------------------------------------------*/
+/*	Footer
+------------------------------------------*/
+
+/*------------------------------------------
+ *	Layout
+------------------------------------------*/
+/*		Section
+------------------------------------------*/
+/*		Head
+------------------------------------------*/
+/*		List
+------------------------------------------*/
+.listNormal {
+	li {
+		line-height:$BaseLineHeight;
+		margin:10px 0px;
+	}
+}
+.orderListNormal {
+	padding:0 0 0 20px;
+	li {
+		line-height:$BaseLineHeight;
+		margin:10px 0px;
+		list-style-type:decimal;
+	}
+}
+
+/*	Table
+------------------------------------------*/
+.tblNormal {
+	caption {
+		margin:0 0 5px 0;
+		text-align:left;
+		color:#07c1cd;
+		@include font-size(14);
+	}
+	border-top:2px #dad8d8 solid;
+	border-bottom:2px #dad8d8 solid;
+	th,
+	td {
+		padding:10px 20px 10px 20px;
+		border-bottom:1px #dad8d8 solid;
+		line-height:$BaseLineHeight;
+	}
+	th {
+		background:#f9f7f3;
+		font-weight:bold;
+	}
+	&.tblTwo {
+		width:330px;
+		float:left;
+		margin:0 0 0 30px;
+	}
+	&.first {
+		margin:0;
+	}
+}
+
+/*	dl
+------------------------------------------*/
+.dlHorizonal {
+	overflow:hidden;
+	line-height:$BaseLineHeight;
+	
+	dt {
+		clear:both;
+		float:left;
+		width:130px;
+		border-top:1px $BorderColorDotted dotted;
+		margin:10px 0 0 0;
+		padding:10px 0 0 0;
+		font-weight:bold;
+		+ dd {
+			margin-top:10px;
+			padding:10px 0 0 0;
+			border-top:1px $BorderColorDotted dotted;
+		}
+	}
+	dd {
+		margin:0 0 0 130px;
+	}
+	.first {
+		border-top:none;
+		margin-top:0;
+		padding-top:0;
+	}
+	
+}
+
+/*	Text
+------------------------------------------*/
+strong {
+	font-weight:bold;
+}
+.attention {
+	color:#b91111;
+}
+
+/*	Icon
+------------------------------------------*/
+
+/*	Button
+------------------------------------------*/
+input.btn,
+.btn a {
+	@include inline-block;
+	padding:10px 60px 13px;
+	background-color:#ccc;
+	border:none;
+	&:hover {
+		background-color:#ddd;
+	}
+}
+
+/*------------------------------------------
+ *	CMS
+------------------------------------------*/

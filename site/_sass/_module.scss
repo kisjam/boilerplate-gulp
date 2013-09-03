@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+//------------------------------------------
+//	Common
+//------------------------------------------
+$use:
+	-webkit-, true,
+	-moz-, true,
+	-o-, true,
+	-ms-, true;
+
+@mixin addPrefix($property, $value) {
+	$property: unquote($property);
+	$value: unquote($value);
+	@for $i from 1 through length($use)/2 {
+		$n: $i * 2;
+		$propIndex: $n - 1;
+		@if nth($use, $n) {
+			#{nth($use, $propIndex) + $property}: $value;
+		}
+	}
+	#{$property}: $value;
+}
+
+//------------------------------------------
+//	CSS 3
+//------------------------------------------
+
+//------------------------------------------
+//	Module
+//------------------------------------------
+//		font size
+//------------------------------------------
+@mixin font-size($font_size) {
+	font-size:$font_size+px;
+	font-size:$font_size*0.1+rem;
+}
+
+//		font-family
+//------------------------------------------
+@mixin font-mincho() {
+	font-family:"ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+}
+
+//		clear fix
+//------------------------------------------
+%clearfix:after {
+	visibility:hidden;
+	clear:both;
+	display:block;
+	content:" ";
+	height:0;
+	font-size:0;
+}
+%clearfix {zoom:1;}
