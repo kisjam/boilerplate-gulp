@@ -7,3 +7,5 @@ deny from all
 #AuthType Basic
 #require valid-user 
 #order deny,allow
+
+AddType application/x-httpd-php .php .html
