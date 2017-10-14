@@ -1,7 +1,7 @@
 const dir = {
   src: {
     root: 'src/',
-    stylesheets: 'src/assets/scss/',
+    stylesheets: 'src/assets/sass/',
     javascripts: 'src/assets/js/',
     images: 'src/assets/images/',
     fonts: 'src/assets/fonts/',
@@ -9,7 +9,7 @@ const dir = {
   },
   build: {
     root: 'dist/',
-    stylesheets: 'dist/assets/scss/',
+    stylesheets: 'dist/assets/css/',
     javascripts: 'dist/assets/js/',
     images: 'dist/assets/images/',
     fonts: 'dist/assets/fonts/',
@@ -34,14 +34,37 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 });
 
+const webpack = require('webpack-stream');
+const webpackConfig = {
+  entry: './' + dir.src.javascripts + 'app.js',
+  output: {
+    path: `${__dirname}/dist`,
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['env']
+        }
+      }
+    ]
+  }
+}
 gulp.task('js', function() {
-  // gulp.src(folder.src + 'js/**/*')
-  // .pipe(plumber())
-  // .pipe(webpack(webpackConfig))
-  // .pipe(gulp.dest(folder.build + 'js/'))
-  // .pipe(browserSync.stream());
+  gulp.src(dir.src.javascripts + '**/*')
+  .pipe(plumber())
+  .pipe(webpack(webpackConfig))
+  .pipe(gulp.dest(dir.build.javascripts))
+  .pipe(browserSync.stream());
 });
 
+const plumber = require('gulp-plumber'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer');
 const sassConfig = {
   outputStyle: 'nested',
   precision: 3,
@@ -52,7 +75,7 @@ const autoprefixerConfig = {
 }
 
 gulp.task('css', function() {
-  return gulp.src(dir.src.stylesheets + '**/*.scss')
+  return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
     .pipe(plumber())
     .pipe(sass(sassConfig))
     .pipe(autoprefixer(autoprefixerConfig))
@@ -61,16 +84,20 @@ gulp.task('css', function() {
 });
 
 gulp.task('html', function() {
-  // return gulp.src(folder.src + '**/*.html')
-  //   .pipe(gulp.dest(folder.build))
-  //   .pipe(browserSync.stream());
+  return gulp.src(dir.src.root + '**/*.html')
+    .pipe(gulp.dest(dir.build.root))
+    .pipe(browserSync.stream());
 
 });
 
 gulp.task('server', function() {
-  // return browserSync.init({
-  //   //proxy: 'kisjam.com.dev'
-  // })
+  return browserSync.init({
+    open: 'external',
+    server: {
+      baseDir: "dist"
+    }
+    //proxy: 'kisjam.com.dev'
+  })
 });
 
 gulp.task('watch',['server'] ,function() {
