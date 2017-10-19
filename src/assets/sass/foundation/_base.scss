@@ -1,4 +1,71 @@
 /*
-/* Reset
+/* Base
 /*
 ----------------------------------------------------------------- */
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200;
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+html {
+  font-size: 62.5%;
+  background: #000000;
+}
+
+body {
+  font-family: 'Noto Sans Japanese', Verdana, Meiryo, "M+ 1p", sans-serif;
+  color: #000;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  -webkit-text-size-adjust: 100%;
+}
+img {
+  @include mq(sp) {
+    max-width: 100%;
+    //width: 100%;
+    height: auto;
+  }
+}
+
+a:link {
+  //text-decoration: none;
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  //color: #999;
+}
+
+a:active {
+  //color: #55D6BE;
+}

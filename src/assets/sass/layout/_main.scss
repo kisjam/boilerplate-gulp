@@ -1,4 +1,12 @@
 /*
-/* Reset
+/* Main
 /*
 ----------------------------------------------------------------- */
+.container {
+  overflow: hidden;
+  background: #fff;
+  min-width: $width-site;
+  @include mq(sp) {
+    min-width: 0;
+  }
+}
