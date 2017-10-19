@@ -66,7 +66,7 @@ const plumber = require('gulp-plumber'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer');
 const sassConfig = {
-  outputStyle: 'nested',
+  outputStyle: 'expanded',
   precision: 3,
   errLogToConsole: true
 }

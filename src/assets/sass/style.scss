@@ -2,6 +2,8 @@
 // Foundation
 // ==========================================================================
 
+@import "foundation/_variables";
+@import "foundation/_mixin";
 @import "foundation/_reset";
 @import "foundation/_base";
 
@@ -30,10 +32,10 @@
 // Project
 // -----------------------------------------------------------------
 
-// @import "object/project/_articles";
-// @import "object/project/_comments";
-// @import "object/project/_gallery";
-// @import "object/project/_profile";
+@import "object/project/_layout";
+@import "object/project/_button";
+@import "object/project/_animation";
+@import "object/project/pages/_top";
 
 // -----------------------------------------------------------------
 // Utility
@@ -41,7 +43,7 @@
 
 // @import "object/utility/_align";
 @import "object/utility/_clearfix";
-// @import "object/utility/_margin";
+@import "object/utility/_display";
 // @import "object/utility/_position";
 // @import "object/utility/_size";
 // @import "object/utility/_text";
