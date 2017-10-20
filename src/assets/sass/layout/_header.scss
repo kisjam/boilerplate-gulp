@@ -3,19 +3,11 @@
 /*
 ----------------------------------------------------------------- */
 .header {
-  position: fixed;
-  left: 0;
-  z-index: 11;
-  width: 100%;
-  transition: background-color 0.4s ease;
 }
 
 .nav {
   &__global {
     display: flex;
-    @include mq(sp, true) {
-      display: none;
-    }
     @include mq(sp) {
       position: fixed;
       left: 0;

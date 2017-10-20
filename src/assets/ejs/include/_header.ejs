@@ -1,0 +1,22 @@
+<%
+
+if (typeof location === 'undefined') var location = '';
+location = location.split('/');
+
+%>
+
+<h1 class="logo"><a href="/">Logo</a></h1>
+
+<nav class="nav">
+  <button class="nav__btn"></button>
+  <ul class="nav__global">
+    <li class="nav__global__item<% if(location[1] == 'about'){ %>--current<% } %>"><a href="#">About</a></li>
+    <li class="nav__global__item"><a href="#">Company</a></li>
+    <li class="nav__global__item<% if(location[1] == 'products'){ %>--current<% } %>"><a href="#">Products</a><ul>
+      <li class="nav__global__item__child"><a href="#">Coffee</a></li>
+      <li class="nav__global__item__child<% if(location[1] + '/' + location[2] == 'products/tea'){ %>--current<% } %>"><a href="#">Tea</a></li>
+      <li class="nav__global__item__child"><a href="#">Alcohol</a></li>
+    </ul></li>
+    <li class="nav__global__item"><a href="#">Contact</a></li>
+  </ul>
+</nav>
