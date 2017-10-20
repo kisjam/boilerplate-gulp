@@ -1,0 +1,33 @@
+<%
+  var location = "/about/";
+%>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <%- include('../../include/_head', {
+      title: 'Top | ',
+      description: 'uniq'
+    }) %>
+  </head>
+<body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__inner">
+          <%- include('../../include/_header', {location: location}) %>
+        </div>
+      </header>
+
+      <main>
+        <h1>about</h1>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <%- include('../../include/_footer') %>
+        </div>
+      </footer>
+    </div>
+    <%- include('../../include/_script', {param:'param'}) %>
+  </body>
+</html>
