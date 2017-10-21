@@ -5,7 +5,7 @@ const dir = {
     javascripts: 'src/assets/js/',
     images: 'src/assets/images/',
     fonts: 'src/assets/fonts/',
-    html: 'src/assets/pug'
+    html: 'src/assets/ejs/page/'
   },
   build: {
     root: 'dist/',
@@ -13,22 +13,29 @@ const dir = {
     javascripts: 'dist/assets/js/',
     images: 'dist/assets/images/',
     fonts: 'dist/assets/fonts/',
-    html: 'dist/assets/pug'
+    html: 'dist/'
   }
 }
 
 const gulp = require('gulp'),
   newer = require('gulp-newer'),
-  imagemin = require('gulp-imagemin'),
-  browserSync = require("browser-sync");
+  pngquant = require('imagemin-pngquant'),
+  imagemin = require('gulp-imagemin');
 
 const optimizationLevel = {
   'optimizationLevel': 5
+}
+const pngquantConfig = {
+  quality: '65-80',
+  speed: 1
 }
 
 gulp.task('images', function() {
   gulp.src(dir.src.images + '**/*/')
     .pipe(newer(dir.build.images))
+    .pipe(imagemin(
+      [pngquant(pngquantConfig)]
+    ))
     .pipe(imagemin( optimizationLevel ))
     .pipe(gulp.dest(dir.build.images))
     .pipe(browserSync.stream());
@@ -73,7 +80,6 @@ const sassConfig = {
 const autoprefixerConfig = {
   browsers: ['last 2 versions']
 }
-
 gulp.task('css', function() {
   return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
     .pipe(plumber())
@@ -83,20 +89,36 @@ gulp.task('css', function() {
     .pipe(browserSync.stream());
 });
 
+const ejs = require('gulp-ejs');
+const data = require('gulp-data');
+
 gulp.task('html', function() {
-  return gulp.src(dir.src.root + '**/*.html')
-    .pipe(gulp.dest(dir.build.root))
+  return gulp.src([
+    dir.src.html + '**/*.ejs',
+    '!' + dir.src.html + '**/_*.ejs'
+  ])
+    .pipe(plumber())
+    .pipe(data(function(file) {
+      return { 'filename': file.path }
+    }))
+    .pipe(ejs({
+      devRoot: dir.src.html
+    }, {
+    }, {
+      "ext": ".html"
+    }))
+    .pipe(gulp.dest(dir.build.html))
     .pipe(browserSync.stream());
 
 });
 
+const browserSync = require("browser-sync");
 gulp.task('server', function() {
   return browserSync.init({
     open: 'external',
     server: {
       baseDir: "dist"
     }
-    //proxy: 'kisjam.com.dev'
   })
 });
 
@@ -104,7 +126,7 @@ gulp.task('watch',['server'] ,function() {
   gulp.watch(dir.src.images + '**/*', ['images']);
   gulp.watch(dir.src.stylesheets + '**/*', ['css']);
   gulp.watch(dir.src.javascripts + '**/*', ['js']);
-  gulp.watch(dir.src.root + '**/*.html', ['html']);
+  gulp.watch(dir.src.root + '**/*.ejs', ['html']);
   gulp.watch('*.html').on('change', function() {
     browserSync.reload();
   })

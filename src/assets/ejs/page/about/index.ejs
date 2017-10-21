@@ -1,33 +1,34 @@
 <%
-  var location = "/about/";
+  var absolutePath = filename.split(devRoot)[filename.split(devRoot).length -1].replace('.ejs','.html');
+  var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+
 %>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <%- include('../../include/_head', {
-      title: 'Top | ',
+    <%- include('../' + relativePath + 'partial/_head', {
+      title: 'about',
       description: 'uniq'
     }) %>
   </head>
-<body>
   <body>
     <div class="container">
       <header class="header">
         <div class="header__inner">
-          <%- include('../../include/_header', {location: location}) %>
+          <%- include('../' + relativePath + 'partial/_header', {
+            location: absolutePath
+          }) %>
         </div>
       </header>
 
       <main>
-        <h1>about</h1>
+        <h1>new</h1>
       </main>
 
       <footer class="footer">
         <div class="footer__inner">
-          <%- include('../../include/_footer') %>
         </div>
       </footer>
     </div>
-    <%- include('../../include/_script', {param:'param'}) %>
   </body>
 </html>
