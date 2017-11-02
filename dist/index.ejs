@@ -2,35 +2,37 @@
   var absolutePath = filename.split(devRoot)[filename.split(devRoot).length -1].replace('.ejs','.html');
   var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
 
-  var location = "/";
-
 %>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <%- include('../' + relativePath + 'partial/_head', {
-      title: 'about',
-      description: 'uniq'
-    }) %>
+<%- include('../' + relativePath + 'partial/_head', {
+  title: 'top',
+  description: 'unique description.'
+}) %>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <div class="header__inner">
-          <%- include(pathSet(absPath) + 'partial/_header', {
-            location: location
-          }) %>
+<%- include('../' + relativePath + 'partial/_header', {
+  location: absolutePath
+}) %>
         </div>
       </header>
 
       <main>
         <h1>new</h1>
+        <figure><img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt=""></figure>
       </main>
 
       <footer class="footer">
         <div class="footer__inner">
+<%- include('../' + relativePath + 'partial/_footer') %>
         </div>
       </footer>
     </div>
+
+<%- include('../' + relativePath + 'partial/_script') %>
   </body>
 </html>

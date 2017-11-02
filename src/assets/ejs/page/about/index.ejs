@@ -1,7 +1,6 @@
 <%
   var absolutePath = filename.split(devRoot)[filename.split(devRoot).length -1].replace('.ejs','.html');
   var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
-
 %>
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,5 +29,6 @@
         </div>
       </footer>
     </div>
+    <script src="/assets/js/bundle.js"></script>
   </body>
 </html>
