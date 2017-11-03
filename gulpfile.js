@@ -90,7 +90,10 @@ gulp.task('css', function() {
 });
 
 const ejs = require('gulp-ejs');
+<<<<<<< HEAD
+=======
 const data = require('gulp-data');
+>>>>>>> release/2.3
 
 gulp.task('html', function() {
   return gulp.src([
@@ -98,12 +101,16 @@ gulp.task('html', function() {
     '!' + dir.src.html + '**/_*.ejs'
   ])
     .pipe(plumber())
+<<<<<<< HEAD
+    .pipe(ejs({}, {
+=======
     .pipe(data(function(file) {
       return { 'filename': file.path }
     }))
     .pipe(ejs({
       devRoot: dir.src.html
     }, {
+>>>>>>> release/2.3
     }, {
       "ext": ".html"
     }))
