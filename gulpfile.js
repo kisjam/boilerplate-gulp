@@ -90,7 +90,10 @@ gulp.task('css', function() {
 });
 
 const ejs = require('gulp-ejs');
+<<<<<<< HEAD
 const data = require('gulp-data');
+=======
+>>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
 
 gulp.task('html', function() {
   return gulp.src([
@@ -98,12 +101,16 @@ gulp.task('html', function() {
     '!' + dir.src.html + '**/_*.ejs'
   ])
     .pipe(plumber())
+<<<<<<< HEAD
     .pipe(data(function(file) {
       return { 'filename': file.path }
     }))
     .pipe(ejs({
       devRoot: dir.src.html
     }, {
+=======
+    .pipe(ejs({}, {
+>>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
     }, {
       "ext": ".html"
     }))

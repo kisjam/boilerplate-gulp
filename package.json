@@ -16,7 +16,10 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
+<<<<<<< HEAD
     "gulp-data": "^1.2.1",
+=======
+>>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
     "gulp-ejs": "^3.0.1",
     "gulp-imagemin": "^3.4.0",
     "gulp-newer": "^1.3.0",

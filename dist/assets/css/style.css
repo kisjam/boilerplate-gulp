@@ -78,7 +78,14 @@ img {
 
 html {
   font-size: 62.5%;
+<<<<<<< HEAD
   background: #fafafa;
+=======
+<<<<<<< HEAD
+=======
+  background: #000000;
+>>>>>>> release/2.2
+>>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
 }
 
 body {
@@ -96,6 +103,8 @@ body {
   }
 }
 
+<<<<<<< HEAD
+=======
 a:link {
   color: #fff;
 }
@@ -108,12 +117,142 @@ a:hover {
   text-decoration: none;
 }
 
+>>>>>>> release/2.2
 /*
 /* Footer
 /*
 ----------------------------------------------------------------- */
 /*
 /* Header
+<<<<<<< HEAD
+/*
+----------------------------------------------------------------- */
+.nav__global {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__global {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding: 30px 20px 20px;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: opacity 1s ease, visibility 1s ease;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+}
+
+.nav__btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 62px;
+  z-index: 101;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+}
+
+@media screen and (min-width: 769px) {
+  .nav__btn {
+    display: none;
+  }
+}
+
+.nav__btn:before, .nav__btn:after {
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.nav__btn:before {
+  content: '';
+  display: block;
+  margin: 0 auto 0;
+  width: 27px;
+  height: 2px;
+  background: #fff;
+}
+
+.nav__btn:after {
+  content: '';
+  display: block;
+  margin: 8px auto 0 auto;
+  width: 27px;
+  height: 2px;
+  background: #fff;
+}
+
+.nav--active .nav__btn:before, .nav--active .nav__btn:after {
+  -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.nav--active .nav__btn:before {
+  top: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 0 0 #0f65aa;
+          box-shadow: 0 0 0 0 #0f65aa;
+  background: #fff;
+}
+
+.nav--active .nav__btn:after {
+  top: -5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .nav--active .nav__global {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/*
+/* Main
+/*
+----------------------------------------------------------------- */
+.container {
+  overflow: hidden;
+  background: #fff;
+  min-width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 0;
+  }
+}
+
+/*
+/* Layout
+=======
+>>>>>>> release/2.2
 /*
 ----------------------------------------------------------------- */
 .header {
@@ -238,6 +377,8 @@ a:hover {
 }
 
 /*
+<<<<<<< HEAD
+=======
 /* Main
 /*
 ----------------------------------------------------------------- */
@@ -258,6 +399,7 @@ a:hover {
 /*
 ----------------------------------------------------------------- */
 /*
+>>>>>>> release/2.2
 /* Button
 /*
 ----------------------------------------------------------------- */

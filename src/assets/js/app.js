@@ -1,4 +1,7 @@
+'use strict';
+
 const $ = require('jquery');
+<<<<<<< HEAD
 const Utility = require('./modules/utility');
 const u = new Utility();
 const ResponsiveImage = require('./modules/responsive-image');
@@ -10,6 +13,15 @@ const responsiveImage = new ResponsiveImage();
 // var mobileNavigation = require('./modules/mobile-menu');
 
 
+=======
+const navStatus = require('./modules/nav-status');
+const mobileNavigation = require('./modules/mobile-menu');
+require('./modules/utility');
+require('./modules/scroll-animation');
+require('./modules/response-image');
+require('./modules/smooth-scroll');
+
+>>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
 $(function() {
   // console.log(u.ww())
   // console.log(u.isMobileVp);
