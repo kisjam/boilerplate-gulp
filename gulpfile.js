@@ -91,9 +91,15 @@ gulp.task('css', function() {
 
 const ejs = require('gulp-ejs');
 <<<<<<< HEAD
+<<<<<<< HEAD
 const data = require('gulp-data');
 =======
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+=======
+const data = require('gulp-data');
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 
 gulp.task('html', function() {
   return gulp.src([
@@ -102,15 +108,24 @@ gulp.task('html', function() {
   ])
     .pipe(plumber())
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    .pipe(ejs({}, {
+=======
+>>>>>>> release/2.3
     .pipe(data(function(file) {
       return { 'filename': file.path }
     }))
     .pipe(ejs({
       devRoot: dir.src.html
     }, {
+<<<<<<< HEAD
 =======
     .pipe(ejs({}, {
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+>>>>>>> release/2.3
+>>>>>>> release/2.3
     }, {
       "ext": ".html"
     }))

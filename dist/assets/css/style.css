@@ -79,6 +79,7 @@ img {
 html {
   font-size: 62.5%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background: #fafafa;
 =======
 <<<<<<< HEAD
@@ -86,6 +87,15 @@ html {
   background: #000000;
 >>>>>>> release/2.2
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+<<<<<<< HEAD
+=======
+  background: #000000;
+>>>>>>> release/2.2
+=======
+  background: #fafafa;
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 }
 
 body {

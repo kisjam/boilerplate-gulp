@@ -10426,7 +10426,10 @@ return jQuery;
 
 /***/ }),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> release/2.3
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10537,13 +10540,19 @@ $(function () {
 });
 
 /***/ }),
+<<<<<<< HEAD
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+=======
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 =======
@@ -10759,6 +10768,222 @@ anchor.prototype = {
   // 			return false;
   // 		});
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+var $ = __webpack_require__(0);
+<<<<<<< HEAD
+var origin = __webpack_require__(1);
+
+var navStatus = {
+	init: function init() {
+		var _posY = 0;
+		var _nav = $('.header');
+		var _isScroll = false;
+		origin.$window.on('scroll', function () {
+			_posY = $(this).scrollTop();
+			if (_posY > 10) {
+				if (_isScroll) return;
+				_isScroll = true;
+				_nav.addClass('header--scroll');
+			} else {
+				if (!_isScroll) return;
+				_isScroll = false;
+				_nav.removeClass('header--scroll');
+			}
+		});
+	}
+};
+
+module.exports = navStatus;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var origin = __webpack_require__(1);
+
+var mobileNavigation = {
+	init: function init() {
+		var _nav = $('.nav');
+		var _navBtn = $('.nav__btn');
+		var _navGlobal = $('.nav__global');
+		var _navCloseBtn = $('.nav__global__item--close');
+		var _isActive = false;
+
+		_navBtn.on('click', function () {
+			if (!_isActive) {
+				_isActive = true;
+				_nav.addClass('nav--active');
+			} else if (_isActive) {
+				_isActive = false;
+				_nav.removeClass('nav--active');
+			}
+		});
+		_navCloseBtn.on('click', function () {
+			_isActive = false;
+			_nav.removeClass('nav--active');
+		});
+	}
+};
+
+module.exports = mobileNavigation;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+=======
+>>>>>>> release/2.2
+$.fn.scrollAnimation = function () {
+	$(this).each(function () {
+		new fadeItem(this);
+	});
+};
+
+var fadeItem = function fadeItem(_this) {
+	this.$elem = $(_this);
+	this.init();
+};
+
+fadeItem.prototype = {
+	init: function init() {
+		var _self = this;
+		var $window = $(window);
+		var _targetPosY = this.$elem.offset().top;
+		var _isStart = false;
+
+		$window.on('scroll DOMContentLoaded load', function () {
+			if (_isStart) return;
+			_targetPosY = _self.$elem.offset().top;
+			var _posY = $(this).scrollTop() + $(this).height() * 0.7;
+			if (_posY > _targetPosY) {
+				_isStart = true;
+				_self.$elem.addClass('sc--init');
+			};
+		});
+	}
+};
+
+/***/ }),
+<<<<<<< HEAD
+/* 6 */
+=======
+/* 4 */
+>>>>>>> release/2.2
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var origin = __webpack_require__(1);
+
+$.fn.responseImage = function () {
+	$(this).each(function () {
+		new imageItem(this);
+	});
+};
+
+var imageItem = function imageItem(_this) {
+	this.$elem = $(_this);
+	this.init();
+};
+
+imageItem.prototype = {
+	init: function init() {
+		var _self = this.$elem;
+
+		origin.$window.on('DOMContentLoaded load', function () {
+			//const $elem = $('[data-sp]');
+			var _srcSp = _self.data('sp');
+			var _srcOrigin = _self.attr('src');
+
+			//console.log(_srcSp)
+
+			if (origin.VPisMobile) {
+				_self.attr('src', _srcSp);
+			}
+			$(this).on('changeMobile', function () {
+				_self.attr('src', _srcSp);
+			});
+			$(this).on('changePC', function () {
+				_self.attr('src', _srcOrigin);
+			});
+		});
+	}
+};
+
+/***/ }),
+<<<<<<< HEAD
+=======
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var origin = __webpack_require__(1);
+
+$.smoothScroll = function () {
+  $('a[href^="#"]').each(function () {
+    new anchor(this);
+  });
+};
+
+var anchor = function anchor(_this) {
+  this.$elem = $(_this);
+  this.init();
+};
+anchor.prototype = {
+  init: function init() {
+    this.$elem.on('click', function () {
+      var _href = $(this).attr('href');
+      var _posY = 0;
+      var _headerHeight = $('.header').height();
+      if (_href == "#") return;
+
+      _posY = $(_href).offset().top - _headerHeight;
+
+      $('html, body').animate({
+        scrollTop: _posY
+      }, 1000, 'swing');
+
+      return false;
+    });
+  }
+  // var _c = $.fn.extend({
+  // 			selector: 'a[href^="#"]',
+  // 			time: 1000
+  // 		}, _o);
+  //
+  // 		var _selector = _c.selector,
+  // 			_time = _c.time,
+  // 			_headerHeight;
+  //
+  // 		$(_selector).on('click',function() {
+  //
+  // 			if (_href != "#") {
+  // 				var _posY = 0;
+  // 				if (_href != "#js-pagetop") _posY = $(_href).offset().top;
+  // 				$('html, body').animate({
+  // 					scrollTop: _posY
+  // 				}, _time, 'easeOutExpo');
+  // 			}
+  //
+  // 			return false;
+  // 		});
+=======
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -10773,7 +10998,10 @@ var ResponsiveImage = function () {
 		this.init(elem);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> release/2.3
 };
 
 module.exports = navStatus;
@@ -10782,7 +11010,12 @@ module.exports = navStatus;
 >>>>>>> release/2.2
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
+<<<<<<< HEAD
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+=======
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 
 	_createClass(ResponsiveImage, [{
 		key: 'init',
@@ -10794,6 +11027,69 @@ module.exports = navStatus;
 				changeImage();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+$.smoothScroll = function () {
+  $('a[href^="#"]').each(function () {
+    new anchor(this);
+  });
+};
+
+var anchor = function anchor(_this) {
+  this.$elem = $(_this);
+  this.init();
+};
+anchor.prototype = {
+  init: function init() {
+    this.$elem.on('click', function () {
+      var _href = $(this).attr('href');
+      var _posY = 0;
+      var _headerHeight = $('.header').height();
+      if (_href == "#") return;
+
+      _posY = $(_href).offset().top - _headerHeight;
+
+      $('html, body').animate({
+        scrollTop: _posY
+      }, 1000, 'swing');
+
+      return false;
+    });
+  }
+  // var _c = $.fn.extend({
+  // 			selector: 'a[href^="#"]',
+  // 			time: 1000
+  // 		}, _o);
+  //
+  // 		var _selector = _c.selector,
+  // 			_time = _c.time,
+  // 			_headerHeight;
+  //
+  // 		$(_selector).on('click',function() {
+  //
+  // 			if (_href != "#") {
+  // 				var _posY = 0;
+  // 				if (_href != "#js-pagetop") _posY = $(_href).offset().top;
+  // 				$('html, body').animate({
+  // 					scrollTop: _posY
+  // 				}, _time, 'easeOutExpo');
+  // 			}
+  //
+  // 			return false;
+  // 		});
+
+};
+=======
+var mobileNavigation = {
+	init: function init() {
+		var _nav = $('.nav');
+		var _navBtn = $('.nav__btn');
+		var _navGlobal = $('.nav__global');
+		var _navCloseBtn = $('.nav__global__item--close');
+		var _isActive = false;
+=======
+>>>>>>> release/2.3
 				function changeImage() {
 					if (u.mq.matches) {
 						val.setAttribute('src', _srcOrigin);
@@ -10804,6 +11100,7 @@ module.exports = navStatus;
 			});
 		}
 	}]);
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 $.smoothScroll = function () {
@@ -10865,16 +11162,27 @@ var mobileNavigation = {
 		var _navCloseBtn = $('.nav__global__item--close');
 		var _isActive = false;
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 
 	return ResponsiveImage;
 }();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 module.exports = ResponsiveImage;
 =======
 module.exports = mobileNavigation;
 >>>>>>> release/2.2
 >>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
+=======
+module.exports = mobileNavigation;
+>>>>>>> release/2.2
+=======
+module.exports = ResponsiveImage;
+>>>>>>> release/2.3
+>>>>>>> release/2.3
 
 /***/ })
 /******/ ]);
