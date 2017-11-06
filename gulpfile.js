@@ -98,7 +98,6 @@ gulp.task('html', function() {
     '!' + dir.src.html + '**/_*.ejs'
   ])
     .pipe(plumber())
-    .pipe(ejs({}, {
     .pipe(data(function(file) {
       return { 'filename': file.path }
     }))

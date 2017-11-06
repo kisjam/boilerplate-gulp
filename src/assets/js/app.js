@@ -9,8 +9,6 @@ const responsiveImage = new ResponsiveImage();
 // var navStatus = require('./modules/nav-status');
 // var mobileNavigation = require('./modules/mobile-menu');
 
-
->>>>>>> release/2.3
 $(function() {
   // console.log(u.ww())
   // console.log(u.isMobileVp);
