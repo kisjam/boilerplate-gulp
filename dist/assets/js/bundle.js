@@ -96,6 +96,12 @@ module.exports = function () {
 			this.isMobile = false;
 		}
 
+		if (this.isMobile) {
+			this.resizeEvent = 'orientationchange';
+		} else {
+			this.resizeEvent = 'resize';
+		}
+
 		this.addResponsiveEvent();
 		this.updateValue();
 	}
@@ -126,10 +132,7 @@ module.exports = function () {
 	}, {
 		key: "addResponsiveEvent",
 		value: function addResponsiveEvent() {
-			var self = this;
-			if (matchMedia) {
-				self.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
-			}
+			this.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
 		}
 	}]);
 
