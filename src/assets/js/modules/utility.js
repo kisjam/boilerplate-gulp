@@ -29,12 +29,19 @@ module.exports = class Utility {
 	}
 	updateValue() {
 		let self = this;
-		window.addEventListener('resize', setValue);
-		window.addEventListener('DOMContentLoaded', setValue);
+		window.addEventListener('resize', setWindowSize);
+		window.addEventListener('DOMContentLoaded', setWindowSize);
 
-		function setValue() {
+		function setWindowSize() {
 			self.wh = this.innerHeight;
 			self.ww = this.innerWidth;
+		}
+
+		window.addEventListener('scroll', setOffset);
+		window.addEventListener('DOMContentLoaded', setOffset);
+
+		function setOffset() {
+			self.wy = document.documentElement.scrollTop || document.body.scrollTop;
 		}
 
 		self.mq.addListener(changeViewport);

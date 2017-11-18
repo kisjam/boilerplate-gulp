@@ -5,7 +5,7 @@ const dir = {
     javascripts: 'src/assets/js/',
     images: 'src/assets/images/',
     fonts: 'src/assets/fonts/',
-    html: 'src/assets/ejs/page/'
+    html: 'src/assets/html/pages/'
   },
   build: {
     root: 'dist/',
@@ -89,27 +89,35 @@ gulp.task('css', function() {
     .pipe(browserSync.stream());
 });
 
-const ejs = require('gulp-ejs');
 const data = require('gulp-data');
+const nunjucksRender = require('gulp-nunjucks-render');
+const htmlbeautify = require('gulp-html-beautify');
+const beautifyOptions = {
+    'indent_with_tabs':true
+}
+const njkJsonPath = './src/assets/html/_config/site.json';
+const njkRootPath = 'src/assets/html';
 
 gulp.task('html', function() {
   return gulp.src([
-    dir.src.html + '**/*.ejs',
-    '!' + dir.src.html + '**/_*.ejs'
+    dir.src.html + '**/*.njk'
   ])
     .pipe(plumber())
-    .pipe(data(function(file) {
+    .pipe(data(function() {
+      return require(njkJsonPath);
+    }))
+		.pipe(data(function(file) {
       return { 'filename': file.path }
     }))
-    .pipe(ejs({
-      devRoot: dir.src.html
-    }, {
-    }, {
-      "ext": ".html"
+    .pipe(nunjucksRender({
+      path: [njkRootPath],
+			data: { 'devPath': njkRootPath
+
+			}
     }))
+    .pipe(htmlbeautify(beautifyOptions))
     .pipe(gulp.dest(dir.build.html))
     .pipe(browserSync.stream());
-
 });
 
 const browserSync = require("browser-sync");
@@ -117,7 +125,7 @@ gulp.task('server', function() {
   return browserSync.init({
     open: 'external',
     server: {
-      baseDir: "dist"
+      baseDir: dir.build.root
     }
   })
 });
@@ -126,7 +134,7 @@ gulp.task('watch',['server'] ,function() {
   gulp.watch(dir.src.images + '**/*', ['images']);
   gulp.watch(dir.src.stylesheets + '**/*', ['css']);
   gulp.watch(dir.src.javascripts + '**/*', ['js']);
-  gulp.watch(dir.src.root + '**/*.ejs', ['html']);
+  gulp.watch(dir.src.root + '**/*.njk', ['html']);
   gulp.watch('*.html').on('change', function() {
     browserSync.reload();
   })
