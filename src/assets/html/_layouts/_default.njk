@@ -5,7 +5,7 @@
 	{% block css %}{% endblock -%}
 </head>
 
-<body class="{{ pageDirectory | join('-') }}">
+<body class="{{ filename | join('-') }}">
 	<div class="container">
 		{%- include '_partials/_header.njk' -%}
 

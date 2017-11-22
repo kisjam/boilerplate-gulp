@@ -107,7 +107,7 @@ gulp.task('html', function() {
       return require(njkJsonPath);
     }))
 		.pipe(data(function(file) {
-      return { 'filename': file.path }
+      return { 'filename': file.path.split(dir.src.html).pop().replace('.njk', '').split('/') }
     }))
     .pipe(nunjucksRender({
       path: [njkRootPath],
