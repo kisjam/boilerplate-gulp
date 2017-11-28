@@ -98,51 +98,6 @@ gulp.task('css', function() {
 		.pipe(browserSync.stream());
 });
 
-<<<<<<< HEAD
-const ejs = require('gulp-ejs');
-<<<<<<< HEAD
-<<<<<<< HEAD
-const data = require('gulp-data');
-=======
->>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
-=======
-=======
-const data = require('gulp-data');
->>>>>>> release/2.3
->>>>>>> release/2.3
-
-gulp.task('html', function() {
-  return gulp.src([
-    dir.src.html + '**/*.ejs',
-    '!' + dir.src.html + '**/_*.ejs'
-  ])
-    .pipe(plumber())
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    .pipe(ejs({}, {
-=======
->>>>>>> release/2.3
-    .pipe(data(function(file) {
-      return { 'filename': file.path }
-    }))
-    .pipe(ejs({
-      devRoot: dir.src.html
-    }, {
-<<<<<<< HEAD
-=======
-    .pipe(ejs({}, {
->>>>>>> e065d377fef07f9e03caf751988aa3d5ab0b2ecb
-=======
->>>>>>> release/2.3
->>>>>>> release/2.3
-    }, {
-      "ext": ".html"
-    }))
-    .pipe(gulp.dest(dir.build.html))
-    .pipe(browserSync.stream());
-
-=======
 const data = require('gulp-data');
 const nunjucksRender = require('gulp-nunjucks-render');
 const htmlbeautify = require('gulp-html-beautify');
@@ -167,7 +122,6 @@ gulp.task('html', function() {
 		.pipe(htmlbeautify(beautifyOptions))
 		.pipe(gulp.dest(dir.build.html))
 		.pipe(browserSync.stream());
->>>>>>> release/2.4
 });
 
 const browserSync = require("browser-sync");
