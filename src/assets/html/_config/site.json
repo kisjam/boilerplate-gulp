@@ -1,0 +1,13 @@
+{
+  "data": {
+    "sitename": "templete",
+		"favicon": "/assets/images/favicon.ico",
+    "meta": {
+      "description": "desc",
+      "keywords": "keywords"
+    },
+		"og": {
+			"image": "http://#"
+		}
+  }
+}

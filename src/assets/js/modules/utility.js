@@ -4,34 +4,49 @@
  *
  */
 
-class Utility {
+module.exports = class Utility {
 	constructor() {
+		this.ua = navigator.userAgent;
 		this.breakpoint = {
-			sp: 768,
+			sp: 769,
 			tablet: 960
 		}
 
-		window.addEventListener('resize', this.setValue);
-		window.addEventListener('DOMContentLoaded', this.setValue);
-		this.addEvent();
-	}
-	setValue() {
-		this.wh = this.innerHeight;
-		this.ww = this.innerWidth;
-		// console.log('wh:' + this.wh)
-		// console.log('ww:' + this.ww)
-	}
-	// get isMobileVp() {
-	// 	return true;
-	// }
-	addEvent() {
-		let self = this;
-		if (matchMedia) {
-			self.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
-	  	// self.mq.addListener(changeViewport);
-			self.mq.addListener(changeViewport);
-	  	changeViewport(self.mq);
+		if (this.ua.indexOf("iPhone") >= 0 || this.ua.indexOf("iPad") >= 0 || this.ua.indexOf("Android") >= 0) {
+			this.isMobile = true;
+		} else {
+			this.isMobile = false;
 		}
+
+		if (this.isMobile) {
+			this.resizeEvent = 'orientationchange';
+		} else {
+			this.resizeEvent = 'resize';
+		}
+
+		this.addResponsiveEvent();
+		this.updateValue();
+	}
+	updateValue() {
+		let self = this;
+		window.addEventListener('resize', setWindowSize);
+		window.addEventListener('DOMContentLoaded', setWindowSize);
+
+		function setWindowSize() {
+			self.wh = this.innerHeight;
+			self.ww = this.innerWidth;
+		}
+
+		window.addEventListener('scroll', setOffset);
+		window.addEventListener('DOMContentLoaded', setOffset);
+
+		function setOffset() {
+			self.wy = document.documentElement.scrollTop || document.body.scrollTop;
+		}
+
+		self.mq.addListener(changeViewport);
+		changeViewport(self.mq);
+
 		function changeViewport(mq) {
 		  if (self.mq.matches) {
 				self.isMobileVp = false;
@@ -40,6 +55,7 @@ class Utility {
 		  }
 		}
 	}
+	addResponsiveEvent() {
+		this.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
+	}
 }
-
-module.exports = Utility;

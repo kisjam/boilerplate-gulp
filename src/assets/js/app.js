@@ -12,6 +12,7 @@ const responsiveImage = new ResponsiveImage();
 // var navStatus = require('./modules/nav-status');
 // var mobileNavigation = require('./modules/mobile-menu');
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -26,6 +27,8 @@ require('./modules/smooth-scroll');
 =======
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+>>>>>>> release/2.4
 $(function() {
   // console.log(u.ww())
   // console.log(u.isMobileVp);

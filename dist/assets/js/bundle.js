@@ -80,42 +80,54 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *
  */
 
-var Utility = function () {
+module.exports = function () {
 	function Utility() {
 		_classCallCheck(this, Utility);
 
+		this.ua = navigator.userAgent;
 		this.breakpoint = {
-			sp: 768,
+			sp: 769,
 			tablet: 960
 		};
 
-		window.addEventListener('resize', this.setValue);
-		window.addEventListener('DOMContentLoaded', this.setValue);
-		this.addEvent();
+		if (this.ua.indexOf("iPhone") >= 0 || this.ua.indexOf("iPad") >= 0 || this.ua.indexOf("Android") >= 0) {
+			this.isMobile = true;
+		} else {
+			this.isMobile = false;
+		}
+
+		if (this.isMobile) {
+			this.resizeEvent = 'orientationchange';
+		} else {
+			this.resizeEvent = 'resize';
+		}
+
+		this.addResponsiveEvent();
+		this.updateValue();
 	}
 
 	_createClass(Utility, [{
-		key: 'setValue',
-		value: function setValue() {
-			this.wh = this.innerHeight;
-			this.ww = this.innerWidth;
-			// console.log('wh:' + this.wh)
-			// console.log('ww:' + this.ww)
-		}
-		// get isMobileVp() {
-		// 	return true;
-		// }
-
-	}, {
-		key: 'addEvent',
-		value: function addEvent() {
+		key: "updateValue",
+		value: function updateValue() {
 			var self = this;
-			if (matchMedia) {
-				self.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
-				// self.mq.addListener(changeViewport);
-				self.mq.addListener(changeViewport);
-				changeViewport(self.mq);
+			window.addEventListener('resize', setWindowSize);
+			window.addEventListener('DOMContentLoaded', setWindowSize);
+
+			function setWindowSize() {
+				self.wh = this.innerHeight;
+				self.ww = this.innerWidth;
 			}
+
+			window.addEventListener('scroll', setOffset);
+			window.addEventListener('DOMContentLoaded', setOffset);
+
+			function setOffset() {
+				self.wy = document.documentElement.scrollTop || document.body.scrollTop;
+			}
+
+			self.mq.addListener(changeViewport);
+			changeViewport(self.mq);
+
 			function changeViewport(mq) {
 				if (self.mq.matches) {
 					self.isMobileVp = false;
@@ -124,12 +136,15 @@ var Utility = function () {
 				}
 			}
 		}
+	}, {
+		key: "addResponsiveEvent",
+		value: function addResponsiveEvent() {
+			this.mq = window.matchMedia("(min-width: " + this.breakpoint.sp + "px)");
+		}
 	}]);
 
 	return Utility;
 }();
-
-module.exports = Utility;
 
 /***/ }),
 /* 1 */
@@ -148,7 +163,6 @@ var responsiveImage = new ResponsiveImage();
 
 // var navStatus = require('./modules/nav-status');
 // var mobileNavigation = require('./modules/mobile-menu');
-
 
 $(function () {
   // console.log(u.ww())
@@ -10427,6 +10441,7 @@ return jQuery;
 /***/ }),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> release/2.3
@@ -10546,12 +10561,15 @@ $(function () {
 =======
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+>>>>>>> release/2.4
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10984,6 +11002,9 @@ anchor.prototype = {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+>>>>>>> release/2.4
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -10997,6 +11018,7 @@ var ResponsiveImage = function () {
 		var elem = document.querySelectorAll('[data-sp]');
 		this.init(elem);
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -11016,6 +11038,8 @@ module.exports = navStatus;
 =======
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+>>>>>>> release/2.4
 
 	_createClass(ResponsiveImage, [{
 		key: 'init',
@@ -11028,6 +11052,7 @@ module.exports = navStatus;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 $.smoothScroll = function () {
@@ -11090,6 +11115,8 @@ var mobileNavigation = {
 		var _isActive = false;
 =======
 >>>>>>> release/2.3
+=======
+>>>>>>> release/2.4
 				function changeImage() {
 					if (u.mq.matches) {
 						val.setAttribute('src', _srcOrigin);
@@ -11101,6 +11128,7 @@ var mobileNavigation = {
 		}
 	}]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 $.smoothScroll = function () {
@@ -11165,10 +11193,13 @@ var mobileNavigation = {
 =======
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+>>>>>>> release/2.4
 
 	return ResponsiveImage;
 }();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 module.exports = ResponsiveImage;
@@ -11183,6 +11214,9 @@ module.exports = mobileNavigation;
 module.exports = ResponsiveImage;
 >>>>>>> release/2.3
 >>>>>>> release/2.3
+=======
+module.exports = ResponsiveImage;
+>>>>>>> release/2.4
 
 /***/ })
 /******/ ]);
