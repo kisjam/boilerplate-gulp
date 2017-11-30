@@ -9,6 +9,26 @@
   }
 }
 
+@mixin placeholder {
+	&:placeholder-shown {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
 @mixin mq($point, $min:false) {
 	@if( type-of($point) == list ){
 		$bp1:'';

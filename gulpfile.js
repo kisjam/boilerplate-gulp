@@ -78,6 +78,7 @@ gulp.task('js', function() {
 	.pipe(browserSync.stream());
 });
 
+const sassGlob = require("gulp-sass-glob");
 const plumber = require('gulp-plumber'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer');
@@ -89,9 +90,11 @@ const sassConfig = {
 const autoprefixerConfig = {
 	browsers: ['last 2 versions']
 }
+
 gulp.task('css', function() {
 	return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
 		.pipe(plumber())
+		.pipe(sassGlob())
 		.pipe(sass(sassConfig))
 		.pipe(autoprefixer(autoprefixerConfig))
 		.pipe(gulp.dest(dir.build.stylesheets))
