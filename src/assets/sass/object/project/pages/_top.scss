@@ -5,3 +5,8 @@
 /**
  * Visual
  */
+.icon {
+	&::after {
+		@include icon($arrow);
+	}
+}

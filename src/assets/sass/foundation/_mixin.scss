@@ -9,6 +9,24 @@
   }
 }
 
+@function per($num, $denomi){
+	@return percentage($num / $denomi);
+}
+
+@mixin icon( $iconfont ){
+	font-family: 'icon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-indent: 0;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: $iconfont;
+}
+
 @mixin placeholder {
 	&:placeholder-shown {
 		@content;

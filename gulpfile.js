@@ -5,6 +5,7 @@ const dir = {
 		javascripts: 'src/assets/js/',
 		images: 'src/assets/images/',
 		fonts: 'src/assets/fonts/',
+		svg: 'src/assets/svg/',
 		html: 'src/assets/html/pages/'
 	},
 	build: {
@@ -13,6 +14,7 @@ const dir = {
 		javascripts: 'dist/assets/js/',
 		images: 'dist/assets/images/',
 		fonts: 'dist/assets/fonts/',
+		svg: 'dist/assets/svg/',
 		html: 'dist/'
 	},
 	njk: {
@@ -57,6 +59,7 @@ const webpackConfig = {
 		path: `${__dirname}/dist`,
 		filename: 'bundle.js'
 	},
+	devtool: 'inline-source-map',
 	module: {
 		loaders: [
 			{
@@ -127,6 +130,36 @@ gulp.task('html', function() {
 		.pipe(browserSync.stream());
 });
 
+var iconfont = require('gulp-iconfont');
+var svgmin = require('gulp-svgmin');
+var consolidate = require('gulp-consolidate');
+
+gulp.task('iconfont', function(){
+
+	gulp.src(dir.src.svg + '**/*.svg')
+		.pipe(svgmin())
+		.pipe(plumber())
+		.pipe(iconfont({
+			fontName: 'icon',
+			formats: ['ttf', 'eot', 'woff', 'svg'],
+			normalize: true
+		}))
+		.on('glyphs', function(glyphs){
+
+			gulp.src(dir.src.fonts + '/template/_icon.scss')
+				.pipe(consolidate('lodash', {
+					glyphs: glyphs,
+					fontName: 'icon',
+					fontPath: '../fonts/',
+					className: 'icon',
+				}))
+				.pipe(gulp.dest(dir.src.stylesheets + '/foundation/'));
+
+		})
+		.pipe(gulp.dest(dir.build.fonts))
+		.pipe(browserSync.stream());
+});
+
 const browserSync = require("browser-sync");
 gulp.task('server', function() {
 	return browserSync.init({
@@ -141,8 +174,9 @@ gulp.task('watch',['server'] ,function() {
 	gulp.watch(dir.src.images + '**/*', ['images']);
 	gulp.watch(dir.src.stylesheets + '**/*', ['css']);
 	gulp.watch(dir.src.javascripts + '**/*', ['js']);
+	gulp.watch([dir.src.svg + '/**/*.svg'],['iconfont']);
 	gulp.watch(dir.src.root + '**/*' + config.html.extension, ['html']);
-	gulp.watch('*.html').on('change', function() {
+	gulp.watch(['*.html', '*.php']).on('change', function() {
 		browserSync.reload();
 	})
 });
