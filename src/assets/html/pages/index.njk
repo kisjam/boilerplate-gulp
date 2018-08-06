@@ -7,18 +7,10 @@
 
 {% block contents -%}
 <main>
-	<p class="icon">piyo</p>
-	<p>
-		<a href="#bottom">bottom</a>
-	</p>
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<p class="sa">Scroll animation</p>
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<img src="/assets/images/pcimage.jpg" data-sp="/assets/images/spimage.jpg" alt="">
-	<p id="bottom">bottom.</p>
+	<picture>
+		<source srcset="/assets/images/spimage.jpg" media="(max-width: 768px)">
+		<img src="/assets/images/pcimage.jpg" alt="">
+	</picture>
 </main>
 {%- endblock %}
 
