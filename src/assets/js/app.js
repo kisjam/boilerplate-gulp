@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use strict';
 
 const $ = require('jquery');
@@ -8,10 +9,18 @@ const ResponsiveImage = require('./modules/responsive-image');
 const responsiveImage = new ResponsiveImage();
 // require('./modules/scroll-animation');
 // require('./modules/smooth-scroll');
+=======
+>>>>>>> release/3.0.1
 
-// var navStatus = require('./modules/nav-status');
-// var mobileNavigation = require('./modules/mobile-menu');
+import $ from 'jquery';
+import ResponsiveImage from './modules/responsive-image';
+import ScrollAnimation from './modules/scroll-animation';
+import mobileNavigation from './modules/mobile-menu';
+import './modules/smooth-scroll';
+import throttle from 'lodash.throttle';
+import Tweenmax from 'gsap';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -41,6 +50,20 @@ $(function() {
   // mobileNavigation.init();
   // navStatus.init();
 })
+=======
+>>>>>>> release/3.0.1
 window.addEventListener('DOMContentLoaded', () => {
+
+	new ResponsiveImage();
+
+	mobileNavigation.init();
+	$.smoothScroll();
+
+	const sa = document.querySelectorAll('.sa');
+	new ScrollAnimation(sa);
+
+	// window.addEventListener('scroll', throttle(function() {
+	// 	console.log('throttle');
+	// }, 1000));
 
 });

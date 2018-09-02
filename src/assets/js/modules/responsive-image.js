@@ -3,10 +3,12 @@ const u = new Utility();
 
 class ResponsiveImage {
 	constructor() {
-		const elem = document.querySelectorAll('[data-sp]');
+		const elems = document.querySelectorAll('[data-sp]');
+		const elem = Array.prototype.slice.call(elems, 0);
 		this.init(elem);
 	}
 	init(elem) {
+
 		elem.forEach((val) => {
 			const _srcSp = val.getAttribute('data-sp');
 			const _srcOrigin = val.getAttribute('src');

@@ -6,7 +6,12 @@
 {% block css -%}{% endblock %}
 
 {% block contents -%}
-
+<main>
+	<picture>
+		<source srcset="/assets/images/spimage.jpg" media="(max-width: 768px)">
+		<img src="/assets/images/pcimage.jpg" alt="">
+	</picture>
+</main>
 {%- endblock %}
 
 {% block js -%}{% endblock %}
