@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 /* Mixin
 /*
@@ -87,19 +86,19 @@ img {
   text-align: center;
 }
 
-.icon-arrow:before {
+.icon-company:before {
   content: "\EA01";
 }
 
-.icon-reload:before {
+.icon-faq:before {
   content: "\EA02";
 }
 
-.icon-triangle:before {
+.icon-pin:before {
   content: "\EA03";
 }
 
-.icon-triangle_lg:before {
+.icon-search:before {
   content: "\EA04";
 }
 
@@ -336,20 +335,6 @@ body {
 /**
  * Visual
  */
-.icon::after {
-  font-family: 'icon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  text-indent: 0;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-}
-
 /*
 /* Reset
 /*

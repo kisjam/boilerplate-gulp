@@ -128,7 +128,7 @@ import svgmin from 'gulp-svgmin';
 import consolidate from 'gulp-consolidate';
 
 export const icon = () => {
-	return gulp.src(dir.src.svg + '**/*.svg')
+	return gulp.src(dir.src.svg + '**/*')
 		.pipe(svgmin())
 		.pipe(plumber())
 		.pipe(iconfont({
@@ -168,7 +168,7 @@ export const watch = () => {
 		gulp.watch(dir.src.images + '**/*', gulp.series(images));
 		gulp.watch(dir.src.stylesheets + '**/*', gulp.series(css));
 		gulp.watch(dir.src.javascripts + '**/*', gulp.series(js));
-		gulp.watch([dir.src.svg + '/**/*.svg'], gulp.series(icon));
+		gulp.watch(dir.src.svg + '**/*', gulp.series(icon));
 		gulp.watch(dir.src.root + '**/*' + htmlExtension, gulp.series(html));
 		gulp.watch(['*.html', '*.php', '*.njk']).on('change', function() {
 			browserSync.reload();
