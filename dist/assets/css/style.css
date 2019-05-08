@@ -86,20 +86,8 @@ img {
   text-align: center;
 }
 
-.icon-company:before {
-  content: "\EA01";
-}
-
-.icon-faq:before {
-  content: "\EA02";
-}
-
 .icon-pin:before {
-  content: "\EA03";
-}
-
-.icon-search:before {
-  content: "\EA04";
+  content: "\EA01";
 }
 
 /*
