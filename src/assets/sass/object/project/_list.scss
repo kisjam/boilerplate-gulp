@@ -1,0 +1,20 @@
+.list {
+	font-size: 1.5rem;
+	color: $color-font;
+	line-height: 2;
+	font-family: $ff-serif;
+	list-style: disc;
+	padding-left: 20px;
+
+	@include mq(sp) {
+		font-size: 1.4rem;
+		line-height: 1.8;
+	}
+
+	li {
+
+	}
+
+
+
+}

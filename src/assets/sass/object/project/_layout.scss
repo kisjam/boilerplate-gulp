@@ -1,0 +1,15 @@
+/*
+/* Layout
+/*
+----------------------------------------------------------------- */
+
+.layout{
+	&__center{
+		text-align: center;
+	}
+	&__dot{
+		border-bottom: 1px dashed #000;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+}

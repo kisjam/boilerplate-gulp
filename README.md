@@ -6,9 +6,3 @@ Webサイトを作るときに使用しているテンプレート、対象は�
 * Nunjucks
 * Webpack
 * iconfont
-
-# Publish chacksheets
-* metaタグ（escription, title等）の設定は行われているか
-* ogpの設定はされているか
-* favicon（任意）
-* GAタグは正しく設定されているか

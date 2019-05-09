@@ -1,0 +1,12 @@
+{
+  "data": {
+    "sitename": "",
+    "meta": {
+      "description": "desc",
+      "keywords": "keywords"
+    },
+		"og": {
+			"image": "http://#"
+		}
+  }
+}

@@ -1,0 +1,27 @@
+.input-text {
+	width: 100%;
+	max-width: 540px;
+	padding: 19px;
+	box-sizing: border-box;
+	font-size: 1.6rem;
+	border: 1px $color-gray-border solid;
+	background: none;
+	border-radius: 8px;
+	transition: border-color .3s ease;
+	font-family: $ff-serif;
+
+	@include placeholder() {
+		color: #aaa;
+	};
+
+	&:focus {
+		outline: none;
+		border-color: $color-blue;
+	}
+
+	&:read-only {
+		background: #eee;
+		border-color: #D5D5D5;
+		// border-color: #000;
+	}
+}

@@ -1,0 +1,26 @@
+.sec {
+	padding-right: 20px;
+	padding-left: 20px;
+
+	&.-basic {
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+		@include mq(sp) {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 30px;
+	}
+
+	&__footer {
+		margin-top: 80px;
+
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.input-select {
+	position: relative;
+	max-width: 540px;
+
+	select {
+		appearance: none;
+		width: 100%;
+
+		padding: 19px;
+		box-sizing: border-box;
+		font-size: 1.6rem;
+		border: 1px $color-gray-border solid;
+		background: none;
+		border-radius: 8px;
+		transition: border-color .3s ease;
+		font-family: $ff-serif;
+
+		&:focus {
+			outline: none;
+			border-color: $color-blue;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 24px;
+		display: block;
+		border-top: 6px #333 solid;
+		border-right: 4px transparent solid;
+		border-left: 4px transparent solid;
+		border-bottom: 6px transparent solid;
+		// transform: translateY(-6px);
+	}
+}
