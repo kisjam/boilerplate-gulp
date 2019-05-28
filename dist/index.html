@@ -23,6 +23,31 @@
 		<button class="nav__btn"></button>
 	</div>
 </header>
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<div class="breadcrumb__inner">
+		<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__list">
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  class="breadcrumb__list__item">
+				<a href="/" itemprop="item" class="breadcrumb__list__permalink">
+					<span itemprop="name" class="breadcrumb__list__name">トップページ</span>
+				</a>
+				<meta itemprop="position" content="1" />
+			</li>
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  class="breadcrumb__list__item">
+				<a href="/about/" itemprop="item" class="breadcrumb__list__permalink">
+					<span itemprop="name" class="breadcrumb__list__name">会社概要</span>
+				</a>
+				<meta itemprop="position" content="2" />
+			</li>
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" aria-current="page" class="breadcrumb__list__item">
+				<a href="/about/history/" itemprop="item" class="breadcrumb__list__permalink">
+					<span itemprop="name" class="breadcrumb__list__name">沿革</span>
+				</a>
+				<meta itemprop="position" content="3" />
+			</li>
+		</ol>
+	</div>
+</nav>
+
 <main>
 	<div class="row">
 		<div class="col-4">
