@@ -1,54 +1,28 @@
-
 import $ from 'jquery';
 import ResponsiveImage from './modules/responsive-image';
 import ScrollAnimation from './modules/scroll-animation';
 import mobileNavigation from './modules/mobile-menu';
-import navStatus from './modules/nav-status';
 import './modules/smooth-scroll';
 import throttle from 'lodash.throttle';
-import Vivus from 'vivus';
-import Wave from './modules/wave';
+const navStatus = require('./modules/nav-status');
+const mobileNavigation = require('./modules/mobile-menu');
+require('./modules/utility');
+require('./modules/scroll-animation');
+require('./modules/response-image');
+require('./modules/smooth-scroll');
 
 window.addEventListener('DOMContentLoaded', () => {
+
 	new ResponsiveImage();
-
-	navStatus.init();
-
-	if ($('body.index').length || $('body.video').length) {
-
-		$('.visual').addClass('-visible');
-
-		var visual = new Vivus('visual__svg', {
-			type: 'scenario',
-			forceRender: false
-		});
-
-		setTimeout(function () {
-			$('.visual__copy').addClass('-visible');
-		}, 2600);
-
-		new Wave('#waveStory');
-		new Wave('#waveInterview');
-		new Wave('#waveMessage');
-		new Wave('#waveSpecial');
-		// new Wave('#waveSystem');
-
-		var interview = $('.interview__item a');
-
-		interview.hover(function () {
-
-			var video = $(this).find('video').get(0);
-
-			video.currentTime = 0;
-			video.play();
-
-		}, function () { });
-	}
 
 	mobileNavigation.init();
 	$.smoothScroll();
 
-	const sa = document.querySelectorAll('.st');
+	const sa = document.querySelectorAll('.sa');
 	new ScrollAnimation(sa);
+
+	// window.addEventListener('scroll', throttle(function() {
+	// 	console.log('throttle');
+	// }, 1000));
 
 });
