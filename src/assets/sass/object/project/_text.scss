@@ -1,33 +1,16 @@
 .text {
-	font-size: 1.5rem;
-	color: $color-font;
-	line-height: 2;
-	font-family: $ff-serif;
-
-	@include mq(sp) {
-		font-size: 1.4rem;
-		line-height: 1.8;
-	}
+	font-size: 1.4rem;
+	line-height: $line-height-basic;
 
 	&.-c {
 		text-align: center;
 	}
 
-	&.-lead {
-		line-height: 2.4;
-
-		@include mq(sp) {
-			line-height: 2;
-		}
+	&.-l {
+		text-align: left;
 	}
 
-	&.-notes {
-		text-indent: -1em;
-		padding-left: 1em;
-
-		&::before {
-			content: '※';
-
-		}
+	&.-r {
+		text-align: right;
 	}
 }

@@ -1,25 +1,19 @@
 /*
-/* Input text
+/* Input textarea
 /*
 ----------------------------------------------------------------- */
-.input-text {
+.input-textarea {
 	appearance: none;
 	height: 48px;
+	box-sizing: border-box;
 	padding: 10px;
 	border: 1px #eee solid;
 	font-size: 1.4rem;
-	box-sizing: border-box;
+	line-height: $line-height-basic;
+
 
 	&:focus {
 		outline: none;
-	}
-
-	&::-ms-clear {
-		visibility:hidden;
-	}
-
-	&::-ms-reveal {
-		visibility:hidden;
 	}
 
 	&:disabled {

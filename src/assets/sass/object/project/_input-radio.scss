@@ -1,0 +1,24 @@
+/*
+/* Input Radio
+/*
+----------------------------------------------------------------- */
+.input-radio {
+	display: inline-block;
+
+	&__input {
+		display: none;
+
+		&:checked + .input-radio__item {
+			border-color: #6cc;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px #000 solid;
+		padding: 20px;
+		cursor: pointer;
+	}
+}
