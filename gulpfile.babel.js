@@ -40,12 +40,12 @@ const pngquantConfig = {
 export const images = () => {
 	return gulp.src(dir.src.images + '**/*')
 		.pipe(plumber())
-		.pipe(newer( dir.build.images ))
+		.pipe(newer(dir.build.images))
 		.pipe(imagemin(
-			[pngquant( pngquantConfig )]
+			[pngquant(pngquantConfig)]
 		))
-		.pipe(imagemin( optimizationLevel ))
-		.pipe(gulp.dest( dir.build.images ))
+		.pipe(imagemin(optimizationLevel))
+		.pipe(gulp.dest(dir.build.images))
 		.pipe(browserSync.stream());
 }
 
@@ -71,10 +71,10 @@ const webpackConfig = {
 	}
 }
 export const js = () => {
-	return gulp.src( dir.src.javascripts + '**/*' )
+	return gulp.src(dir.src.javascripts + '**/*')
 		.pipe(plumber())
-		.pipe(webpack( webpackConfig ))
-		.pipe(gulp.dest( dir.build.javascripts ))
+		.pipe(webpack(webpackConfig))
+		.pipe(gulp.dest(dir.build.javascripts))
 		.pipe(browserSync.stream());
 }
 
@@ -95,9 +95,9 @@ export const css = () => {
 	return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
 		.pipe(plumber())
 		.pipe(sassGlob())
-		.pipe(sass( sassConfig ))
-		.pipe(autoprefixer( autoprefixerConfig ))
-		.pipe(gulp.dest( dir.build.stylesheets ))
+		.pipe(sass(sassConfig))
+		.pipe(autoprefixer(autoprefixerConfig))
+		.pipe(gulp.dest(dir.build.stylesheets))
 		.pipe(browserSync.stream());
 }
 
@@ -107,19 +107,19 @@ const htmlExtension = '.njk';
 
 export const html = () => {
 	return gulp.src([
-			dir.src.html + '**/*' + htmlExtension
-		])
+		dir.src.html + '**/*' + htmlExtension
+	])
 		.pipe(plumber())
-		.pipe(data(function() {
+		.pipe(data(function () {
 			return require(dir.njk.json);
 		}))
-		.pipe(data(function( file ) {
+		.pipe(data(function (file) {
 			return { 'filename': file.path.split(dir.src.html).pop().replace(htmlExtension, '').split('/') }
 		}))
 		.pipe(nunjucksRender({
-				path: [ dir.njk.root ]
+			path: [dir.njk.root]
 		}))
-		.pipe(gulp.dest( dir.build.html ))
+		.pipe(gulp.dest(dir.build.html))
 		.pipe(browserSync.stream());
 }
 
@@ -136,7 +136,7 @@ export const icon = () => {
 			formats: ['ttf', 'eot', 'woff', 'svg'],
 			normalize: true
 		}))
-		.on('glyphs', function(glyphs){
+		.on('glyphs', function (glyphs) {
 
 			gulp.src(dir.src.fonts + '/template/_icon.scss')
 				.pipe(consolidate('lodash', {
@@ -165,15 +165,15 @@ export const server = done => {
 }
 
 export const watch = () => {
-		gulp.watch(dir.src.images + '**/*', gulp.series(images));
-		gulp.watch(dir.src.stylesheets + '**/*', gulp.series(css));
-		gulp.watch(dir.src.javascripts + '**/*', gulp.series(js));
-		gulp.watch(dir.src.svg + '**/*', gulp.series(icon));
-		gulp.watch(dir.src.root + '**/*' + htmlExtension, gulp.series(html));
-		gulp.watch(['*.html', '*.php', '*.njk']).on('change', function() {
-			browserSync.reload();
-		})
+	gulp.watch(dir.src.images + '**/*', gulp.series(images));
+	gulp.watch(dir.src.stylesheets + '**/*', gulp.series(css));
+	gulp.watch(dir.src.javascripts + '**/*', gulp.series(js));
+	gulp.watch(dir.src.svg + '**/*', gulp.series(icon));
+	gulp.watch(dir.src.root + '**/*' + htmlExtension, gulp.series(html));
+	gulp.watch(['*.html', '*.php', '*.njk']).on('change', function () {
+		browserSync.reload();
+	})
 }
 
-export const run =  gulp.series(images, js, css, html, icon);
+export const run = gulp.series(images, js, css, html, icon);
 export default gulp.series(run, server, watch);
