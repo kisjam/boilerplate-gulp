@@ -1,0 +1,13 @@
+.st {
+
+	transition: transform 1s ease,
+	opacity 1s ease;
+	transform: translateY(20px);
+	opacity: 0;
+
+	&.-init {
+		@extend .st;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

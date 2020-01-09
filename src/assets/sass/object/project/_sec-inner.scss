@@ -3,9 +3,8 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	&.-lg {
-		max-width: none;
-		margin-right: 20px;
-		margin-left: 20px;
+	&__wrapper {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }

@@ -1,0 +1,90 @@
+/*
+/* Mixin
+/*
+----------------------------------------------------------------- */
+@mixin hover-opacity($opacity:0.8) {
+  transition: opacity 0.4s ease;
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin st_transition() {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease,
+    transform 1s ease;
+}
+
+@mixin st_init() {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@function per($num, $denomi){
+	@return percentage($num / $denomi);
+}
+
+@mixin icon( $iconfont ){
+	font-family: 'icon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-indent: 0;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: $iconfont;
+}
+
+@mixin placeholder {
+	&:placeholder-shown {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin mq($point, $min:false) {
+	@if( type-of($point) == list ){
+		$bp1:'';
+		$bp2:'';
+		@if( map-get($breakpoints, nth($point,1)) ){
+			$bp1: map-get($breakpoints, nth($point,1))+1;
+		} @else {
+			$bp1: nth($point,1);
+		}
+		@if( map-get($breakpoints, nth($point,2)) ){
+			$bp2: map-get($breakpoints, nth($point,2));
+		} @else {
+			$bp2: nth($point,2);
+		}
+		@media screen and (min-width: $bp1) and (max-width: $bp2) { @content; }
+	} @else if ($min) {
+		@if( map-get($breakpoints, $point) ) {
+			@media screen and (min-width: map-get($breakpoints, $point)+1) { @content; }
+		} @else {
+			@media screen and (min-width: $point) { @content; }
+		}
+	} @else {
+		@if( map-get($breakpoints, $point) ){
+			@media screen and (max-width: map-get($breakpoints, $point)) { @content; }
+		} @else {
+			@media screen and (max-width: $point) { @content; }
+		}
+	}
+}

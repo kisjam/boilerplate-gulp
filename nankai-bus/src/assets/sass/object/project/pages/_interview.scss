@@ -1,0 +1,342 @@
+/*
+/* Interview
+/*
+----------------------------------------------------------------- */
+/**
+ * Visual
+**/
+.interview-visual {
+	background-size: cover;
+
+	@include mq(sp) {
+		background-position: 45% 0;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		height: 38vw;
+
+		@include mq(sp) {
+			height: 60vw;
+		}
+	}
+
+	&__title {
+		font-size: 2.6rem;
+		color: #fff;
+		font-family: $ff-serif;
+
+		@include mq(sp) {
+			font-size: 1.4rem;
+		}
+
+		span {
+			display: inline-block;
+			padding: 10px 10px;
+			margin-bottom: 5px;
+			line-height: 1;
+			letter-spacing: .2em;
+			background-color: $color-blue;
+
+			@include mq(sp) {
+				padding: 5px;
+				letter-spacing: 0;
+			}
+		}
+	}
+
+	&__name {
+		margin-top: 20px;
+		color: $color-font;
+		font-family: $ff-serif;
+		font-size: 1.8rem;
+		letter-spacing: .2em;
+
+		@include mq(sp) {
+			font-size: 1.3rem;
+			margin-top: 10px;
+		}
+	}
+
+	&__career {
+		color: $color-font;
+		font-family: $ff-serif;
+		letter-spacing: .2em;
+		margin-top: 5px;
+
+		@include mq(sp) {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+
+
+.interview-content {
+	padding-top: 90px;
+	padding-bottom: 100px;
+
+	@include mq(sp) {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+
+	&.-gray {
+		background-color: $color-gray-light;
+	}
+
+	&__body {
+		overflow: hidden;
+		margin-top: 40px;
+
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+	}
+
+	&__footer {
+		margin-top: 80px;
+	}
+
+	&__title {
+		@include mq(sp) {
+			text-align: left;
+		}
+	}
+
+	&__thumb {
+		float: right;
+		margin-left: 50px;
+
+		@include mq(sp) {
+			float: none;
+			text-align: center;
+			margin-left: 0;
+			margin-bottom: 20px;
+		}
+
+		&.-l {
+			float: left;
+			margin-left: 0;
+			margin-right: 50px;
+
+			@include mq(sp) {
+				float: none;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+.interview-message {
+	padding-top: 90px;
+	padding-bottom: 100px;
+
+	@include mq(sp) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	&.-gray {
+		background-color: $color-gray-light;
+	}
+
+	&__inner {
+		overflow: hidden;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+
+		@include mq(sp) {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__thumb {
+		float: right;
+		margin-left: 50px;
+
+		@include mq(sp) {
+			text-align: center;
+			margin-left: 0;
+			float: none;
+		}
+
+		&.-l {
+			float: left;
+			margin-left: 0;
+			margin-right: 50px;
+		}
+	}
+}
+
+.interview-relation {
+	padding-top: 80px;
+
+	@include mq(sp) {
+		padding-top: 40px;
+		text-align: center;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		border: 1px $color-blue solid;
+		padding: 60px 20px 50px;
+
+		@include mq(sp) {
+			margin: 0 -0px;
+			padding: 20px 10px 30px;
+
+			&::after {
+				content:"";
+				display: block;
+				width: 50%;
+			}
+		}
+	}
+
+	&__content {
+		width: 201px;
+		margin: 0 20px;
+
+		@include mq(sp) {
+			width: 50%;
+			margin: 0;
+			margin-top: 10%;
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+
+		a {
+			text-decoration: none;
+			color: #fff;
+
+			&:hover {
+				.interview-relation__thumb {
+					img {
+						transform: scale(1.1);
+						opacity: .8;
+					}
+				}
+			}
+
+
+		}
+	}
+
+	&__title {
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #fff;
+		transform: translateY(50%);
+
+		@include mq(sp) {
+			width: auto;
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+
+	&__thumb {
+		overflow: hidden;
+		position: relative;
+
+		img {
+			transition: opacity .3s ease,
+				transform 1s ease;
+		}
+
+		figcaption {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 6px 0;
+			font-family: $ff-serif;
+			text-align: center;
+			background: rgba(#000, .8);
+		}
+	}
+}
+
+.interview-main {
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include mq(sp) {
+			display: block;
+		}
+	}
+
+	&__content {
+		margin-top: 100px;
+		width: 50%;
+
+		@include mq(sp) {
+			width: auto;
+			margin-top: 40px;
+		}
+
+		&__thumb {
+			margin-bottom: 20px;
+
+			@include mq(sp) {
+				text-align: center;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		&__title {
+			font-size: 2.6rem;
+			color: $color-blue;
+			font-family: $ff-serif;
+			margin-bottom: 20px;
+			letter-spacing: .2em;
+
+			@include mq(sp) {
+				font-size: 1.8rem;
+				margin-bottom: 10px;
+			}
+		}
+
+		&__name {
+			font-size: 1.8rem;
+			font-family: $ff-serif;
+			letter-spacing: .2em;
+
+			@include mq(sp) {
+				font-size: 1.6rem;
+			}
+		}
+
+		&__career {
+			letter-spacing: .2em;
+			font-family: $ff-serif;
+
+			@include mq(sp) {
+				font-size: 1.3rem;
+			}
+		}
+
+		&__footer {
+			margin-top: 30px;
+
+			@include mq(sp) {
+				margin-top: 20px;
+			}
+		}
+	}
+}

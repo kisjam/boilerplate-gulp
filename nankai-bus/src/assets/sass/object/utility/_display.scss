@@ -1,0 +1,12 @@
+.hidden {
+  &__pc {
+    @include mq(sp, true) {
+      display: none;
+    }
+  }
+  &__sp {
+    @include mq(sp) {
+      display: none;
+    }
+  }
+}
