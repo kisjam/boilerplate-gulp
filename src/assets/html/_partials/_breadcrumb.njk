@@ -1,0 +1,14 @@
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<div class="breadcrumb__inner">
+		<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__list">
+			{%- for breadcrumb in breadcrumbs %}
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" {{  'aria-current="page"' | safe if loop.last}} class="breadcrumb__list__item">
+				<a href="{{ breadcrumb.href }}" itemprop="item" class="breadcrumb__list__permalink">
+					<span itemprop="name" class="breadcrumb__list__name">{{ breadcrumb.item }}</span>
+				</a>
+				<meta itemprop="position" content="{{ loop.index }}" />
+			</li>
+			{%- endfor %}
+		</ol>
+	</div>
+</nav>

@@ -1,0 +1,7 @@
+.sec-header {
+	margin-bottom: 40px;
+
+	@include mq(sp) {
+		margin-bottom: 20px;
+	}
+}

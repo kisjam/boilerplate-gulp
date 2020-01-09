@@ -1,0 +1,160 @@
+/*
+/* Interview
+/*
+----------------------------------------------------------------- */
+/**
+ * Visual
+**/
+.greeting-visual {
+
+	&__inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: -100px;
+		height: calc(50vw);
+		// min-height: 600px;
+
+		@include mq(sp) {
+			margin-bottom: 40px;
+			height: auto;
+			margin-top: 20px;
+		}
+	}
+
+	&__body {
+		width: 67%;
+
+		@include mq(sp) {
+			width: auto;
+		}
+	}
+
+	&__thumb {
+		position: absolute;
+		right: 0;
+		width: 60%;
+		height: auto;
+		padding-right: 20px;
+		box-sizing: border-box;
+
+		@include mq(sp) {
+			position: static;
+			padding-right: 0;
+			width: auto;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__title {
+		font-size: 2.1vw;
+		font-family: $ff-serif;
+		color: $color-font;
+		letter-spacing: .2em;
+		margin-bottom: 30px;
+		line-height: 1.6;
+
+		@include mq(sp) {
+			font-size: 1.4rem;
+			margin-bottom: 0;
+		}
+	}
+
+	&__name {
+		margin-top: 20px;
+		color: $color-font;
+		font-family: $ff-serif;
+		font-size: 1.8rem;
+		letter-spacing: .2em;
+
+		@include mq(sp) {
+			font-size: 1.3rem;
+			margin-top: 15px;
+			text-align: right;
+		}
+	}
+}
+
+.greeting-content {
+	padding-top: 90px;
+	padding-bottom: 100px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.-first {
+		padding-top: 190px;
+
+		@include mq(sp) {
+			padding-top: 40px;
+		}
+	}
+
+	&.-last {
+		padding-bottom: 0;
+
+		@include mq(sp) {
+			padding-bottom: 30px;
+		}
+	}
+
+	@include mq(sp) {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+
+	&.-gray {
+		background-color: $color-gray-light;
+	}
+
+	&__body {
+		overflow: hidden;
+		margin-top: 40px;
+
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+	}
+
+	&__footer {
+		margin-top: 80px;
+
+		@include mq(sp) {
+			margin-top: 20px;
+		}
+	}
+
+	&__title {
+		@include mq(sp) {
+			text-align: left;
+		}
+	}
+
+	&__thumb {
+		float: right;
+		margin-left: 50px;
+
+		@include mq(sp) {
+			float: none;
+			text-align: center;
+			margin-left: 0;
+			margin-bottom: 20px;
+		}
+
+		&.-l {
+			float: left;
+			margin-left: 0;
+			margin-right: 50px;
+
+			@include mq(sp) {
+				float: none;
+				margin-right: 0;
+			}
+		}
+	}
+}

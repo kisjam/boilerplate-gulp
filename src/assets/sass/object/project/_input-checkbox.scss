@@ -1,0 +1,50 @@
+/*
+/* Input Checkbox
+
+	<label class="input-checkbox">
+		<input type="checkbox" class="input-checkbox__input" name="piyo">
+		<span class="input-checkbox__item">チェックボックスのサンプル</span>
+	</label>
+
+/*
+----------------------------------------------------------------- */
+.input-checkbox {
+	cursor: pointer;
+	
+	&__input {
+		display: none;
+
+		&:checked + .input-checkbox__item {
+			&::before {
+				background: #ccc;
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		font-size: 1.4rem;
+		padding-left: 40px;
+		height: 48px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 24px;
+			height: 24px;
+			border-radius: 12px;
+			background: #eee;
+			box-sizing: border-box;
+			font-size: 1.4rem;
+		}
+	}
+}
+

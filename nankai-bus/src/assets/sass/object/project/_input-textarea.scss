@@ -1,0 +1,22 @@
+/*
+/* Input textarea
+/*
+----------------------------------------------------------------- */
+.input-textarea {
+	appearance: none;
+	height: 48px;
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px #eee solid;
+	font-size: 1.4rem;
+	line-height: $line-height-basic;
+
+
+	&:focus {
+		outline: none;
+	}
+
+	&:disabled {
+		background: #eee;
+	}
+}

@@ -2,37 +2,36 @@
 {% set pageTitle = '' %}
 {% set pageDescription = '' %}
 {% set pagekeywords = '' %}
+{%
+	set breadcrumbs = [
+		{item: 'トップページ', href: '/'},
+		{item: '会社概要', href: '/about/'},
+		{item: '沿革', href: '/about/history/'}
+	]
+%}
 
 {% block css -%}{% endblock %}
 
 {% block contents -%}
 
+{%- include '_partials/_breadcrumb.njk' %}
+
 <main>
-	<div class="row">
-		<div class="col-4">
-			a
+
+	<div class="slick">
+		<div class="slick__item">
+			<img src="https://via.placeholder.com/150" alt="">
 		</div>
-		<div class="col-4">
-			b
+		<div class="slick__item">
+			<img src="https://via.placeholder.com/150" alt="">
 		</div>
-		<div class="col-4">
-			c
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-3 col-sm-6">
-			a
-		</div>
-		<div class="col-3 col-sm-6">
-			b
-		</div>
-		<div class="col-3 col-sm-6">
-			c
-		</div>
-		<div class="col-3 col-sm-6">
-			d
+		<div class="slick__item">
+			<img src="https://via.placeholder.com/150" alt="">
 		</div>
 	</div>
+
+	<p><a href="https://via.placeholder.com/150" data-fancybox>fancy</a></p>
+
 </main>
 
 {%- endblock %}
