@@ -119,6 +119,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-feature-settings: "palt";
           font-feature-settings: "palt";
+  min-height: -webkit-fill-available;
 }
 
 @media screen and (max-width: 768px) {
