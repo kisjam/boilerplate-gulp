@@ -1,0 +1,76 @@
+.nav-btn {
+	appearance: none;
+	width: 90px;
+	height: 90px;
+	background-color: $color-gray-bg;
+	border: none;
+	cursor: pointer;
+	transition: background-color .3s ease;
+
+	@include mq(sp) {
+		width: 70px;
+		height: 70px;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 30px;
+		height: 1px;
+		background-color: $color-assort;
+		transition: background-color .3s ease,
+			box-shadow .3s ease,
+			transform .3s ease;
+	}
+
+	&::before {
+		transform: translate(-50%, -5px);
+		box-shadow: 0 5px 0 0 rgba($color-assort, 1);
+	}
+
+	&::after {
+		transform: translate(-50%, 5px);
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.-active {
+		&::before {
+			transform: translate(-50%, 0) rotate(30deg);
+			box-shadow: 0 5px 0 0 rgba($color-assort, 0);
+		}
+
+		&::after {
+			transform: translate(-50%, 0) rotate(-30deg);
+		}
+
+		&:hover {
+			@include mq(sp, true) {
+				&::before {
+					box-shadow: 0 5px 0 0 rgba($color-white, 0);
+				}
+			}
+		}
+	}
+
+	&:hover {
+		@include mq(sp, true) {
+			background-color: $color-assort;
+		
+			&::after,
+			&::before {
+				background-color: $color-white;
+			}
+
+			&::before {
+				box-shadow: 0 5px 0 0 rgba($color-white, 1);
+			}
+		}
+		
+	}
+}

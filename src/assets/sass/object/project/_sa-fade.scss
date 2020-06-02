@@ -1,0 +1,7 @@
+.sa-fade {
+	@include sa-transition();
+
+	&.-run {
+		@include sa-run();
+	}
+}
