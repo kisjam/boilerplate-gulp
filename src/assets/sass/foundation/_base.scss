@@ -19,8 +19,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings : "palt";
-  min-height: -webkit-fill-available;
 }
+
 img {
   @include mq(sp) {
     max-width: 100%;
