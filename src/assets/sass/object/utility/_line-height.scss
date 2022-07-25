@@ -1,0 +1,29 @@
+@mixin lh {
+	@for $i from 10 through 30 {
+		&-#{$i} {
+			line-height: #{$i * .1} !important;
+		}
+	}
+}
+
+.lh {
+	@include lh;
+}
+
+@include mq(sp, true) {
+	.pc\:lh {
+		@include lh;
+	}
+}
+
+@include mq(tablet) {
+	.md\:lh {
+		@include lh;
+	}
+}
+
+@include mq(sp) {
+	.sm\:lh {
+		@include lh;
+	}
+}

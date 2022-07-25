@@ -1,0 +1,31 @@
+@mixin hidden {
+	display: none;
+}
+
+.hidden {
+	@include hidden;
+}
+
+@include mq(sp, true) {
+	.pc\:hidden {
+		@include hidden;
+	}
+}
+
+@include mq(tablet, true) {
+	.tab\:hidden {
+		@include hidden;
+	}
+}
+
+@include mq(tablet) {
+	.md\:hidden {
+		@include hidden;
+	}
+}
+
+@include mq(sp) {
+	.sm\:hidden {
+		@include hidden;
+	}
+}

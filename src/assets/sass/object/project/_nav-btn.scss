@@ -2,7 +2,7 @@
 	appearance: none;
 	width: 90px;
 	height: 90px;
-	background-color: $color-gray-bg;
+	background-color: $color-white;
 	border: none;
 	cursor: pointer;
 	transition: background-color .3s ease;
@@ -20,7 +20,7 @@
 		left: 50%;
 		width: 30px;
 		height: 1px;
-		background-color: $color-assort;
+		background-color: $color-black;
 		transition: background-color .3s ease,
 			box-shadow .3s ease,
 			transform .3s ease;
@@ -28,7 +28,7 @@
 
 	&::before {
 		transform: translate(-50%, -5px);
-		box-shadow: 0 5px 0 0 rgba($color-assort, 1);
+		box-shadow: 0 5px 0 0 rgba($color-black, 1);
 	}
 
 	&::after {
@@ -42,7 +42,7 @@
 	&.-active {
 		&::before {
 			transform: translate(-50%, 0) rotate(30deg);
-			box-shadow: 0 5px 0 0 rgba($color-assort, 0);
+			box-shadow: 0 5px 0 0 rgba($color-black, 0);
 		}
 
 		&::after {
@@ -52,7 +52,7 @@
 		&:hover {
 			@include mq(sp, true) {
 				&::before {
-					box-shadow: 0 5px 0 0 rgba($color-white, 0);
+					box-shadow: 0 5px 0 0 rgba($color-black, 0);
 				}
 			}
 		}
@@ -60,8 +60,8 @@
 
 	&:hover {
 		@include mq(sp, true) {
-			background-color: $color-assort;
-		
+			background-color: $color-black;
+
 			&::after,
 			&::before {
 				background-color: $color-white;
@@ -71,6 +71,6 @@
 				box-shadow: 0 5px 0 0 rgba($color-white, 1);
 			}
 		}
-		
+
 	}
 }

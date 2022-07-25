@@ -1,0 +1,31 @@
+@mixin weight {
+	&-n {
+		font-weight: normal;
+	}
+
+	&-b {
+		font-weight: bold;
+	}
+}
+
+.weight {
+	@include weight;
+}
+
+@include mq(sp, true) {
+	.pc\:weight {
+		@include weight;
+	}
+}
+
+@include mq(tablet) {
+	.md\:weight {
+		@include weight;
+	}
+}
+
+@include mq(sp) {
+	.sm\:weight {
+		@include weight;
+	}
+}

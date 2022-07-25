@@ -78,10 +78,12 @@ export const js = () => {
 		.pipe(browserSync.stream());
 }
 
-import sass from 'gulp-sass';
+import gulpSass from 'gulp-sass';
+import dartSass from "sass";
 import autoprefixer from 'gulp-autoprefixer';
 import sassGlob from 'gulp-sass-glob';
 
+const sass = gulpSass(dartSass);
 const sassConfig = {
 	outputStyle: 'expanded',
 	precision: 3,
@@ -124,12 +126,10 @@ export const html = () => {
 }
 
 import iconfont from 'gulp-iconfont';
-import svgmin from 'gulp-svgmin';
 import consolidate from 'gulp-consolidate';
 
 export const icon = () => {
 	return gulp.src(dir.src.svg + '**/*')
-		.pipe(svgmin())
 		.pipe(plumber())
 		.pipe(iconfont({
 			fontName: 'icon',

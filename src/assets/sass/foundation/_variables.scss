@@ -1,4 +1,5 @@
-$ff-serif: 'Noto Serif JP', serif;;
+$ff-serif: 'Noto Serif JP', serif;
+;
 $width-site: 1200px;
 $display-site: 1200;
 $breakpoints: (
@@ -7,12 +8,5 @@ $breakpoints: (
 	sp: 768px
 );
 
-$line-height-basic: 1.9;
-
-$color-assort: #c34447;
-$color-link: #111;
-$color-font: #111111;
-$color-blue: #0095e9;
-$color-red: #E90000;
-$color-gray-border: #D5D5D5;
-$color-gray-light: #f2f2f2;
+$color-black: #333;
+$color-white: #fff;

@@ -8,17 +8,17 @@
 
 html {
   font-size: 62.5%;
-  background: #fff;
+  background: $color-white;
 }
 
 body {
   font-family: 'Noto Sans JP', Verdana, Meiryo, "M+ 1p", sans-serif;
-  color: $color-font;
+  color: $color-black;
   font-size: 1.4rem;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings : "palt";
+  font-feature-settings: "palt";
 }
 
 img {
@@ -29,16 +29,15 @@ img {
 }
 
 a:link {
-  color: $color-blue;
+  color: $color-black;
 }
 
 a:visited {
-  color: $color-blue;
+  color: $color-black;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-a:active {
-}
+a:active {}

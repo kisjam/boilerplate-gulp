@@ -1,0 +1,29 @@
+@mixin fz {
+	@for $i from 10 through 30 {
+		&-#{$i} {
+			font-size: #{$i * .1}rem !important;
+		}
+	}
+}
+
+.fz {
+	@include fz;
+}
+
+@include mq(sp, true) {
+	.pc\:fz {
+		@include fz;
+	}
+}
+
+@include mq(tablet) {
+	.md\:fz {
+		@include fz;
+	}
+}
+
+@include mq(sp) {
+	.sm\:fz {
+		@include fz;
+	}
+}

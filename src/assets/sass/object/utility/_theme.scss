@@ -1,0 +1,27 @@
+@mixin theme {
+	&-red {
+		color: #f00;
+	}
+}
+
+.theme {
+	@include theme;
+}
+
+@include mq(sp, true) {
+	.pc\:theme {
+		@include theme;
+	}
+}
+
+@include mq(tablet) {
+	.md\:theme {
+		@include theme;
+	}
+}
+
+@include mq(sp) {
+	.sm\:theme {
+		@include theme;
+	}
+}

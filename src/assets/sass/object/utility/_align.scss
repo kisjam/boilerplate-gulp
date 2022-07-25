@@ -1,0 +1,35 @@
+@mixin align {
+	&-c {
+		text-align: center;
+	}
+
+	&-l {
+		text-align: left;
+	}
+
+	&-r {
+		text-align: right;
+	}
+}
+
+.align {
+	@include align;
+}
+
+@include mq(sp, true) {
+	.pc\:align {
+		@include align;
+	}
+}
+
+@include mq(tablet) {
+	.md\:align {
+		@include align;
+	}
+}
+
+@include mq(sp) {
+	.sm\:align {
+		@include align;
+	}
+}

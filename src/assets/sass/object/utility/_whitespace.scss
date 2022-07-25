@@ -1,0 +1,27 @@
+@mixin whitespace {
+	&-nowrap {
+		white-space: nowrap;
+	}
+}
+
+.whitespace {
+	@include whitespace;
+}
+
+@include mq(sp, true) {
+	.pc\:whitespace {
+		@include whitespace;
+	}
+}
+
+@include mq(tablet) {
+	.md\:whitespace {
+		@include whitespace;
+	}
+}
+
+@include mq(sp) {
+	.sm\:whitespace {
+		@include whitespace;
+	}
+}

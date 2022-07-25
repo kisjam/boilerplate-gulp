@@ -1,0 +1,107 @@
+@mixin width {
+	&-auto {
+		width: auto !important;
+	}
+
+	&-full {
+		width: 100% !important;
+	}
+
+	@for $i from 0 through 300 {
+		&-#{$i * 5} {
+			width: #{$i * 5}px !important;
+		}
+	}
+
+	@for $i from 0 through 20 {
+		&-#{$i * 5}per {
+			width: #{$i * 5}per !important;
+		}
+	}
+}
+
+@mixin max-width {
+	&-none {
+		max-width: none !important;
+	}
+
+	&-full {
+		max-width: 100% !important;
+	}
+
+	@for $i from 0 through 300 {
+		&-#{$i * 5} {
+			max-width: #{$i * 5}px !important;
+		}
+	}
+}
+
+@mixin min-width {
+	&-none {
+		min-width: none !important;
+	}
+
+	&-full {
+		min-width: 100% !important;
+	}
+
+	@for $i from 0 through 300 {
+		&-#{$i * 5} {
+			min-width: #{$i * 5}px !important;
+		}
+	}
+}
+
+.w {
+	@include width;
+}
+
+.max-w {
+	@include max-width;
+}
+
+.min-w {
+	@include min-width;
+}
+
+@include mq(sp, true) {
+	.pc\:w {
+		@include width;
+	}
+
+	.pc\:max-w {
+		@include max-width;
+	}
+
+	.pc\:min-w {
+		@include min-width;
+	}
+}
+
+@include mq(tablet) {
+	.md\:w {
+		@include width;
+	}
+
+	.md\:max-w {
+		@include max-width;
+	}
+
+	.md\:min-w {
+		@include min-width;
+	}
+}
+
+@include mq(sp) {
+	.sm\:w {
+		@include width;
+	}
+
+	.sm\:max-w {
+		@include max-width;
+	}
+
+	.sm\:min-w {
+		@include min-width;
+	}
+}
