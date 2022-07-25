@@ -89,16 +89,13 @@ const sassConfig = {
 	precision: 3,
 	errLogToConsole: true
 }
-const autoprefixerConfig = {
-	browsers: ['last 2 versions']
-}
 
 export const css = () => {
 	return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
 		.pipe(plumber())
 		.pipe(sassGlob())
 		.pipe(sass(sassConfig))
-		.pipe(autoprefixer(autoprefixerConfig))
+		.pipe(autoprefixer())
 		.pipe(gulp.dest(dir.build.stylesheets))
 		.pipe(browserSync.stream());
 }

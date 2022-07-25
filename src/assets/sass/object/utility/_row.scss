@@ -2,6 +2,8 @@
 /* Grid System
 /*
 ----------------------------------------------------------------- */
+@use "sass:math";
+
 @mixin row {
 
 	display: flex;
@@ -69,8 +71,8 @@
 		&-#{$i} {
 			padding: 5px;
 			box-sizing: border-box;
-			flex: 0 0 #{100% / 12 * $i};
-			max-width: #{100% / 12 * $i};
+			flex: 0 0 math.div(100%, 12) * $i;
+			max-width: math.div(100%, 12) * $i;
 		}
 	}
 }
