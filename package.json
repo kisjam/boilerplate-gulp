@@ -13,7 +13,7 @@
     "@babel/polyfill": "^7.12.1",
     "@fancyapps/fancybox": "^3.5.7",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "gsap": "^3.10.4",
