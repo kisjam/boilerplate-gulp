@@ -1,0 +1,39 @@
+@mixin gap {
+	@for $i from 0 through 20 {
+		&-#{$i * 5} {
+			gap: #{$i * 5}px;
+		}
+	}
+
+	@for $i from 0 through 20 {
+		&-x-#{$i * 5} {
+			column-gap: #{$i * 5}px;
+		}
+
+		&-y-#{$i * 5} {
+			row-gap: #{$i * 5}px;
+		}
+	}
+}
+
+.gap {
+	@include gap;
+}
+
+@include mq(sp, true) {
+	.pc\:gap {
+		@include gap;
+	}
+}
+
+@include mq(tablet) {
+	.md\:gap {
+		@include gap;
+	}
+}
+
+@include mq(sp) {
+	.sm\:gap {
+		@include gap;
+	}
+}

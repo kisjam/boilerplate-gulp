@@ -1,0 +1,43 @@
+/*
+/* Grid System
+/*
+----------------------------------------------------------------- */
+@use "sass:math";
+
+@mixin grid {
+	display: grid;
+
+	&-cols {
+		@for $i from 1 through 12 {
+			&-#{$i} {
+				grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+			}
+		}
+
+		&-none {
+			grid-template-columns: none;
+		}
+	}
+}
+
+.grid {
+	@include grid;
+}
+
+@include mq(sp, true) {
+	.pc\:grid {
+		@include grid;
+	}
+}
+
+@include mq(tablet) {
+	.md\:grid {
+		@include grid;
+	}
+}
+
+@include mq(sp) {
+	.sm\:grid {
+		@include grid;
+	}
+}
