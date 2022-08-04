@@ -3,7 +3,6 @@
 /*
 ----------------------------------------------------------------- */
 .btn {
-	overflow: hidden;
 	position: relative;
 
 	a,
@@ -11,10 +10,13 @@
 		appearance: none;
 		position: relative;
 		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 45px;
 		width: 100%;
 		text-decoration: none;
-		background: none;
+		background: $color-black;
+		color: $color-white;
 		border: none;
 		max-width: 200px;
 		margin-left: auto;

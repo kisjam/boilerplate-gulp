@@ -246,7 +246,6 @@ a:hover {
 /*
 ----------------------------------------------------------------- */
 .btn {
-  overflow: hidden;
   position: relative;
 }
 .btn a,
@@ -256,10 +255,13 @@ a:hover {
           appearance: none;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 45px;
   width: 100%;
   text-decoration: none;
-  background: none;
+  background: #333;
+  color: #fff;
   border: none;
   max-width: 200px;
   margin-left: auto;
