@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 /*
 /* Input Checkbox
 
@@ -10,11 +12,11 @@
 ----------------------------------------------------------------- */
 .input-checkbox {
 	cursor: pointer;
-	
+
 	&__input {
 		display: none;
 
-		&:checked + .input-checkbox__item {
+		&:checked+.input-checkbox__item {
 			&::before {
 				background: #ccc;
 			}
@@ -47,4 +49,3 @@
 		}
 	}
 }
-

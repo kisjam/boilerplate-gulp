@@ -1,0 +1,7 @@
+@use '../../foundation' as g;
+
+.page-inner {
+	max-width: g.$width-site;
+	margin-right: auto;
+	margin-left: auto;
+}

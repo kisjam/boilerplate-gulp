@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin whitespace {
 	&-nowrap {
 		white-space: nowrap;
@@ -8,19 +10,19 @@
 	@include whitespace;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:whitespace {
 		@include whitespace;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:whitespace {
 		@include whitespace;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:whitespace {
 		@include whitespace;
 	}

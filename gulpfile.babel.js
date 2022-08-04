@@ -78,12 +78,11 @@ export const js = () => {
 		.pipe(browserSync.stream());
 }
 
-import gulpSass from 'gulp-sass';
-import dartSass from "sass";
+import sass from "gulp-dart-sass";
 import autoprefixer from 'gulp-autoprefixer';
-import sassGlob from 'gulp-sass-glob';
+import sassGlob from 'gulp-sass-glob-use-forward';
+import cached from 'gulp-cached';
 
-const sass = gulpSass(dartSass);
 const sassConfig = {
 	outputStyle: 'expanded',
 	precision: 3,
@@ -93,6 +92,7 @@ const sassConfig = {
 export const css = () => {
 	return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
 		.pipe(plumber())
+		.pipe(cached('css'))
 		.pipe(sassGlob())
 		.pipe(sass(sassConfig))
 		.pipe(autoprefixer())

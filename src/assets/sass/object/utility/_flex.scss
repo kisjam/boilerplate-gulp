@@ -3,6 +3,7 @@
 /*
 ----------------------------------------------------------------- */
 @use "sass:math";
+@use '../../foundation' as g;
 
 @mixin flex {
 
@@ -143,19 +144,19 @@
 	@include flex;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:flex {
 		@include flex;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:flex {
 		@include flex;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:flex {
 		@include flex;
 	}

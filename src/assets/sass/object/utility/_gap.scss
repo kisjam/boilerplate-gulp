@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin gap {
 	@for $i from 0 through 20 {
 		&-#{$i * 5} {
@@ -20,19 +22,19 @@
 	@include gap;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:gap {
 		@include gap;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:gap {
 		@include gap;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:gap {
 		@include gap;
 	}

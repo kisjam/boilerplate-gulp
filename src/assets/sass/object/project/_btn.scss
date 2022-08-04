@@ -1,7 +1,5 @@
-/*
-/* Button
-/*
------------------------------------------------------------------ */
+@use '../../foundation' as g;
+
 .btn {
 	position: relative;
 
@@ -15,8 +13,8 @@
 		height: 45px;
 		width: 100%;
 		text-decoration: none;
-		background: $color-black;
-		color: $color-white;
+		background: g.$color-black;
+		color: g.$color-white;
 		border: none;
 		max-width: 200px;
 		margin-left: auto;
@@ -24,7 +22,7 @@
 		transition: color .3s ease;
 		cursor: pointer;
 
-		@include mq(sp) {
+		@include g.mq(sp) {
 			font-size: 1.3rem;
 		}
 	}

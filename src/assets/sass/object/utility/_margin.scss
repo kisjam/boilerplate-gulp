@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin margin {
 	@for $i from 0 through 50 {
 		&t-#{$i * 5} {
@@ -59,7 +61,7 @@
 	@include margin-negative;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:m {
 		@include margin;
 	}
@@ -69,7 +71,7 @@
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:m {
 		@include margin;
 	}
@@ -79,16 +81,12 @@
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:m {
 		@include margin;
-
 	}
 
 	.sm\:-m {
 		@include margin-negative;
-
 	}
-
-
 }

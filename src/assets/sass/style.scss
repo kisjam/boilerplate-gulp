@@ -2,13 +2,9 @@
 // Foundation
 // ==========================================================================
 
-@import "foundation/_variables";
-@import "foundation/_mixin";
-@import "foundation/_reset";
-@import "foundation/_icon";
-@import "foundation/_base";
-// @import "foundation/_slick";
-// @import "foundation/_fancybox";
+@forward "foundation/_reset";
+@forward "foundation/_icon";
+@forward "foundation/_base";
 
 // ==========================================================================
 // Object
@@ -18,10 +14,10 @@
 // Project
 // -----------------------------------------------------------------
 
-@import "object/project/**";
+@forward "object/project/**";
 
 // -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------
 
-@import "object/utility/**";
+@forward "object/utility/**";

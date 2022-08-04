@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin padding {
 	@for $i from 0 through 50 {
 		&t-#{$i * 5} {
@@ -22,19 +24,19 @@
 	@include padding;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:p {
 		@include padding;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:p {
 		@include padding;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:p {
 		@include padding;
 	}

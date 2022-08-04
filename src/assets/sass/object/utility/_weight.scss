@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin weight {
 	&-n {
 		font-weight: normal;
@@ -12,19 +14,19 @@
 	@include weight;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:weight {
 		@include weight;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:weight {
 		@include weight;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:weight {
 		@include weight;
 	}

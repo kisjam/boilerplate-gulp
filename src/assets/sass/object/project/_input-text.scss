@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 /*
 /* Input text
 /*
@@ -15,11 +17,11 @@
 	}
 
 	&::-ms-clear {
-		visibility:hidden;
+		visibility: hidden;
 	}
 
 	&::-ms-reveal {
-		visibility:hidden;
+		visibility: hidden;
 	}
 
 	&:disabled {

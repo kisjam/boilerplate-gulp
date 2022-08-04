@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin theme {
 	&-red {
 		color: #f00;
@@ -8,19 +10,19 @@
 	@include theme;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:theme {
 		@include theme;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:theme {
 		@include theme;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:theme {
 		@include theme;
 	}

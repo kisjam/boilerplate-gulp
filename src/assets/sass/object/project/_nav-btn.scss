@@ -1,13 +1,15 @@
+@use '../../foundation' as g;
+
 .nav-btn {
 	appearance: none;
 	width: 90px;
 	height: 90px;
-	background-color: $color-white;
+	background-color: g.$color-white;
 	border: none;
 	cursor: pointer;
 	transition: background-color .3s ease;
 
-	@include mq(sp) {
+	@include g.mq(sp) {
 		width: 70px;
 		height: 70px;
 	}
@@ -20,7 +22,7 @@
 		left: 50%;
 		width: 30px;
 		height: 1px;
-		background-color: $color-black;
+		background-color: g.$color-black;
 		transition: background-color .3s ease,
 			box-shadow .3s ease,
 			transform .3s ease;
@@ -28,7 +30,7 @@
 
 	&::before {
 		transform: translate(-50%, -5px);
-		box-shadow: 0 5px 0 0 rgba($color-black, 1);
+		box-shadow: 0 5px 0 0 rgba(g.$color-black, 1);
 	}
 
 	&::after {
@@ -42,7 +44,7 @@
 	&.-active {
 		&::before {
 			transform: translate(-50%, 0) rotate(30deg);
-			box-shadow: 0 5px 0 0 rgba($color-black, 0);
+			box-shadow: 0 5px 0 0 rgba(g.$color-black, 0);
 		}
 
 		&::after {
@@ -50,25 +52,25 @@
 		}
 
 		&:hover {
-			@include mq(sp, true) {
+			@include g.mq(sp, true) {
 				&::before {
-					box-shadow: 0 5px 0 0 rgba($color-black, 0);
+					box-shadow: 0 5px 0 0 rgba(g.$color-black, 0);
 				}
 			}
 		}
 	}
 
 	&:hover {
-		@include mq(sp, true) {
-			background-color: $color-black;
+		@include g.mq(sp, true) {
+			background-color: g.$color-black;
 
 			&::after,
 			&::before {
-				background-color: $color-white;
+				background-color: g.$color-white;
 			}
 
 			&::before {
-				box-shadow: 0 5px 0 0 rgba($color-white, 1);
+				box-shadow: 0 5px 0 0 rgba(g.$color-white, 1);
 			}
 		}
 

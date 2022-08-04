@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 /*
 /* Input Radio
 
@@ -14,7 +16,7 @@
 	&__input {
 		display: none;
 
-		&:checked + .input-radio__item {
+		&:checked+.input-radio__item {
 			border-color: #6cc;
 		}
 	}

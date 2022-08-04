@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin align {
 	&-c {
 		text-align: center;
@@ -16,19 +18,19 @@
 	@include align;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:align {
 		@include align;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:align {
 		@include align;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:align {
 		@include align;
 	}

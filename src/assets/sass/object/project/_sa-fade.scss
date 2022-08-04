@@ -1,7 +1,9 @@
+@use '../../foundation' as g;
+
 .sa-fade {
-	@include sa-transition();
+	@include g.sa-transition();
 
 	&.-run {
-		@include sa-run();
+		@include g.sa-run();
 	}
 }

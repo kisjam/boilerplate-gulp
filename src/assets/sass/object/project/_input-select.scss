@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 /*
 /* Input select
 
@@ -13,7 +15,7 @@
 	position: relative;
 	display: inline-block;
 
-	&::after{
+	&::after {
 		content: '';
 		position: absolute;
 		z-index: 0;

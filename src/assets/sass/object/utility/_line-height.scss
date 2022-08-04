@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin lh {
 	@for $i from 10 through 30 {
 		&-#{$i} {
@@ -10,19 +12,19 @@
 	@include lh;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:lh {
 		@include lh;
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:lh {
 		@include lh;
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:lh {
 		@include lh;
 	}

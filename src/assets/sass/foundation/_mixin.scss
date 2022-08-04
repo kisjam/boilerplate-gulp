@@ -2,23 +2,26 @@
 /* Mixin
 /*
 ----------------------------------------------------------------- */
-@mixin hover-opacity($opacity:0.8) {
-  transition: opacity 0.4s ease;
-  &:hover {
-    opacity: $opacity;
-  }
+@use '_variables' as var;
+
+@mixin hover-opacity($opacity: 0.8) {
+	transition: opacity 0.4s ease;
+
+	&:hover {
+		opacity: $opacity;
+	}
 }
 
 @mixin sa-transition() {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .6s ease,
-    transform .6s ease;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity .6s ease,
+		transform .6s ease;
 }
 
 @mixin sa-run() {
-  opacity: 1;
-  transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 @mixin sa-image-transition {
@@ -31,7 +34,7 @@
 		left: 0;
 		top: 0;
 		z-index: 1;
-		background-color: $color-assort;
+		background-color: var.$color-assort;
 		width: 120%;
 		height: 100%;
 		transform: translateX(-100%);
@@ -43,28 +46,14 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		background-color: $color-white;
+		background-color: var.$color-white;
 		width: 100%;
 		height: 100%;
 		transition: opacity 0s linear .5s;
 	}
 }
 
-@mixin sa-image-run() {
-  &::before {
-		transform: translateX(100%);
-	}
-
-	&::after {
-		opacity: 0;
-	}
-}
-
-@function per($num, $denomi){
-	@return percentage($num / $denomi);
-}
-
-@mixin icon( $iconfont ){
+@mixin icon($iconfont ) {
 	font-family: 'icon' !important;
 	speak: none;
 	font-style: normal;
@@ -82,48 +71,77 @@
 	&:placeholder-shown {
 		@content;
 	}
+
 	&::-webkit-input-placeholder {
 		@content;
 	}
+
 	&:-moz-placeholder {
 		opacity: 1;
 		@content;
 	}
+
 	&::-moz-placeholder {
 		opacity: 1;
 		@content;
 	}
+
 	&:-ms-input-placeholder {
 		@content;
 	}
 }
 
-@mixin mq($point, $min:false) {
-	@if( type-of($point) == list ){
-		$bp1:'';
-		$bp2:'';
-		@if( map-get($breakpoints, nth($point,1)) ){
-			$bp1: map-get($breakpoints, nth($point,1))+1;
-		} @else {
-			$bp1: nth($point,1);
+@mixin mq($point, $min: false) {
+	@if(type-of($point)==list) {
+		$bp1: '';
+		$bp2: '';
+
+		@if(map-get(var.$breakpoints, nth($point, 1))) {
+			$bp1: map-get(var.$breakpoints, nth($point, 1))+1;
 		}
-		@if( map-get($breakpoints, nth($point,2)) ){
-			$bp2: map-get($breakpoints, nth($point,2));
-		} @else {
-			$bp2: nth($point,2);
+
+		@else {
+			$bp1: nth($point, 1);
 		}
-		@media screen and (min-width: $bp1) and (max-width: $bp2) { @content; }
-	} @else if ($min) {
-		@if( map-get($breakpoints, $point) ) {
-			@media screen and (min-width: map-get($breakpoints, $point)+1) { @content; }
-		} @else {
-			@media screen and (min-width: $point) { @content; }
+
+		@if(map-get(var.$breakpoints, nth($point, 2))) {
+			$bp2: map-get(var.$breakpoints, nth($point, 2));
 		}
-	} @else {
-		@if( map-get($breakpoints, $point) ){
-			@media screen and (max-width: map-get($breakpoints, $point)) { @content; }
-		} @else {
-			@media screen and (max-width: $point) { @content; }
+
+		@else {
+			$bp2: nth($point, 2);
+		}
+
+		@media screen and (min-width: $bp1) and (max-width: $bp2) {
+			@content;
+		}
+	}
+
+	@else if ($min) {
+		@if(map-get(var.$breakpoints, $point)) {
+			@media screen and (min-width: map-get(var.$breakpoints, $point)+1) {
+				@content;
+			}
+		}
+
+		@else {
+			@media screen and (min-width: $point) {
+				@content;
+			}
+		}
+	}
+
+	@else {
+		@if(map-get(var.$breakpoints, $point)) {
+			@media screen and (max-width: map-get(var.$breakpoints, $point)) {
+				@content;
+			}
+		}
+
+		@else {
+			@media screen and (max-width: $point) {
+				@content;
+			}
 		}
 	}
 }

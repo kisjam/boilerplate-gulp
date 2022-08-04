@@ -1,3 +1,5 @@
+@use '../../foundation' as g;
+
 @mixin width {
 	&-auto {
 		width: auto !important;
@@ -64,7 +66,7 @@
 	@include min-width;
 }
 
-@include mq(sp, true) {
+@include g.mq(sp, true) {
 	.pc\:w {
 		@include width;
 	}
@@ -78,7 +80,7 @@
 	}
 }
 
-@include mq(tablet) {
+@include g.mq(tablet) {
 	.md\:w {
 		@include width;
 	}
@@ -92,7 +94,7 @@
 	}
 }
 
-@include mq(sp) {
+@include g.mq(sp) {
 	.sm\:w {
 		@include width;
 	}
