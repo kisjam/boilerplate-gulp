@@ -2,54 +2,54 @@
 
 @mixin width {
 	&-auto {
-		width: auto !important;
+		width: auto;
 	}
 
 	&-full {
-		width: 100% !important;
+		width: 100%;
 	}
 
 	@for $i from 0 through 300 {
 		&-#{$i * 5} {
-			width: #{$i * 5}px !important;
+			width: #{$i * 5}px;
 		}
 	}
 
 	@for $i from 0 through 20 {
 		&-#{$i * 5}per {
-			width: #{$i * 5}per !important;
+			width: #{$i * 5}per;
 		}
 	}
 }
 
 @mixin max-width {
 	&-none {
-		max-width: none !important;
+		max-width: none;
 	}
 
 	&-full {
-		max-width: 100% !important;
+		max-width: 100%;
 	}
 
 	@for $i from 0 through 300 {
 		&-#{$i * 5} {
-			max-width: #{$i * 5}px !important;
+			max-width: #{$i * 5}px;
 		}
 	}
 }
 
 @mixin min-width {
 	&-none {
-		min-width: none !important;
+		min-width: none;
 	}
 
 	&-full {
-		min-width: 100% !important;
+		min-width: 100%;
 	}
 
 	@for $i from 0 through 300 {
 		&-#{$i * 5} {
-			min-width: #{$i * 5}px !important;
+			min-width: #{$i * 5}px;
 		}
 	}
 }

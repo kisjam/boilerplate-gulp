@@ -3,7 +3,7 @@
 @mixin fz {
 	@for $i from 10 through 30 {
 		&-#{$i} {
-			font-size: #{$i * .1}rem !important;
+			font-size: #{$i * .1}rem;
 		}
 	}
 }

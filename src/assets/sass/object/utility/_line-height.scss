@@ -3,7 +3,7 @@
 @mixin lh {
 	@for $i from 10 through 30 {
 		&-#{$i} {
-			line-height: #{$i * .1} !important;
+			line-height: #{$i * .1};
 		}
 	}
 }
