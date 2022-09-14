@@ -3,7 +3,7 @@
 /*
 ----------------------------------------------------------------- */
 @use "sass:math";
-@use '../../foundation' as g;
+@use 'global' as g;
 
 @mixin grid {
 	display: grid;

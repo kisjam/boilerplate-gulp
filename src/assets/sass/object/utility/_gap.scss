@@ -1,8 +1,8 @@
-@use '../../foundation' as g;
+@use 'global' as g;
 
 @mixin gap {
 	@for $i from 0 through 20 {
-		&-#{$i * 5} {
+		&-#{$i * 10} {
 			gap: #{$i * 5}px;
 		}
 	}

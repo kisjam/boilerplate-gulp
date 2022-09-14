@@ -1,4 +1,4 @@
-@use '../../foundation' as g;
+@use 'global' as g;
 
 .btn {
 	position: relative;
@@ -10,7 +10,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 45px;
+		height: 60px;
 		width: 100%;
 		text-decoration: none;
 		background: g.$color-black;

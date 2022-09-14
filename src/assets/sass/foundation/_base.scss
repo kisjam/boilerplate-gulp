@@ -2,17 +2,17 @@
 /* Base
 /*
 ----------------------------------------------------------------- */
-@use '_variables' as var;
+@use 'global' as g;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
 html {
 	font-size: 62.5%;
-	background: var.$color-white;
+	background: g.$color-white;
 }
 
 body {
-	font-family: var.$ff-noto-sans;
-	color: var.$color-black;
+	font-family: g.$ff-noto-sans;
+	color: g.$color-black;
 	font-size: 1.6rem;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
@@ -26,11 +26,11 @@ img {
 }
 
 a:link {
-	color: var.$color-black;
+	color: g.$color-black;
 }
 
 a:visited {
-	color: var.$color-black;
+	color: g.$color-black;
 }
 
 a:hover {

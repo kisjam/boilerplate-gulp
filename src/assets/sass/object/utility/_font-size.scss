@@ -1,4 +1,4 @@
-@use '../../foundation' as g;
+@use 'global' as g;
 
 @mixin fz {
 	@for $i from 10 through 30 {

@@ -81,9 +81,9 @@ export const js = () => {
 import sass from "gulp-dart-sass";
 import autoprefixer from 'gulp-autoprefixer';
 import sassGlob from 'gulp-sass-glob-use-forward';
-import cached from 'gulp-cached';
 
 const sassConfig = {
+	includePaths: ['node_modules', dir.src.stylesheets],
 	outputStyle: 'expanded',
 	precision: 3,
 	errLogToConsole: true
@@ -92,9 +92,8 @@ const sassConfig = {
 export const css = () => {
 	return gulp.src(dir.src.stylesheets + '**/[^_]*.scss')
 		.pipe(plumber())
-		.pipe(cached('css'))
 		.pipe(sassGlob())
-		.pipe(sass(sassConfig))
+		.pipe(sass.sync(sassConfig))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest(dir.build.stylesheets))
 		.pipe(browserSync.stream());
@@ -142,7 +141,7 @@ export const icon = () => {
 					fontPath: '../fonts/',
 					className: 'icon',
 				}))
-				.pipe(gulp.dest(dir.src.stylesheets + '/foundation/'));
+				.pipe(gulp.dest(dir.src.stylesheets + '/global/'));
 
 		})
 		.pipe(gulp.dest(dir.build.fonts))
