@@ -1,0 +1,17 @@
+@use 'global' as *;
+
+@mixin text {
+	&:not(:first-child) {
+		margin-top: 1em;
+	}
+
+	line-height: $lh-base;
+}
+
+.text {
+	@include text;
+}
+
+p:not([class]) {
+	@include text;
+}

@@ -1,0 +1,60 @@
+@use 'global' as *;
+
+.site-nav {
+	display: flex;
+
+	&__list {
+		display: flex;
+		gap: 16px;
+		padding: 0 24px;
+	}
+
+	&__list-item {
+
+		&>a {
+			display: flex;
+			align-items: center;
+			height: 60px;
+
+			&:hover {
+				&+.site-nav__child-list {
+					opacity: 1;
+					visibility: visible;
+					height: auto;
+				}
+			}
+		}
+
+
+	}
+
+	&__child-list {
+		opacity: 0;
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+
+		&:hover {
+			opacity: 1;
+			visibility: visible;
+			height: auto;
+		}
+	}
+
+	&__child-list-item {
+		&>a {
+			display: flex;
+		}
+	}
+
+	&__download {
+		&>a {
+			display: flex;
+			align-items: center;
+			height: 60px;
+			padding: 0 24px;
+			background-color: $color-black;
+			color: $color-white;
+		}
+	}
+}

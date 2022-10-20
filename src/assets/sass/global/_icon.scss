@@ -30,11 +30,9 @@
 	width: 1.2857142857142858em;
 	text-align: center;
 }
-.icon-arrow-right:before { content: "\EA01" }
-.icon-cross:before { content: "\EA02" }
-.icon-enter:before { content: "\EA03" }
+.icon-arrow:before { content: "\EA01" }
+.icon-view:before { content: "\EA02" }
 
 
-$arrow-right: "\EA01";
-$cross: "\EA02";
-$enter: "\EA03";
+$arrow: "\EA01";
+$view: "\EA02";

@@ -1,0 +1,11 @@
+@use 'global' as *;
+
+.page-nav {
+	&__list {
+		display: flex;
+	}
+
+	&__list-item {
+		flex-grow: 1;
+	}
+}

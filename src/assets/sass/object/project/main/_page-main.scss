@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.page-main {
+	&__body {
+		padding-left: $m-xl;
+		padding-right: $m-xl;
+	}
+}

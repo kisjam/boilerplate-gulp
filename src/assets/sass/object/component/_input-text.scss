@@ -1,0 +1,26 @@
+@use 'global' as *;
+
+/*
+/* Input text
+/*
+----------------------------------------------------------------- */
+.input-text {
+	appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::-ms-clear {
+		visibility: hidden;
+	}
+
+	&::-ms-reveal {
+		visibility: hidden;
+	}
+
+	&:disabled {
+		opacity: .2;
+		pointer-events: none;
+	}
+}

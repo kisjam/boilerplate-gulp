@@ -1,19 +1,21 @@
-@use 'global' as g;
+@use 'global' as *;
+$step-gap: 5;
 
 @mixin gap {
+
 	@for $i from 0 through 20 {
-		&-#{$i * 10} {
-			gap: #{$i * 5}px;
+		&-#{$i * $step-gap} {
+			gap: #{$i * $step-gap}px;
 		}
 	}
 
 	@for $i from 0 through 20 {
-		&-x-#{$i * 5} {
-			column-gap: #{$i * 5}px;
+		&-x-#{$i * $step-gap} {
+			column-gap: #{$i * $step-gap}px;
 		}
 
-		&-y-#{$i * 5} {
-			row-gap: #{$i * 5}px;
+		&-y-#{$i * $step-gap} {
+			row-gap: #{$i * $step-gap}px;
 		}
 	}
 }
@@ -22,19 +24,19 @@
 	@include gap;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:gap {
 		@include gap;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:gap {
 		@include gap;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:gap {
 		@include gap;
 	}

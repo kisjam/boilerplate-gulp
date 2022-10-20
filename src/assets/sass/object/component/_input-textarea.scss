@@ -1,0 +1,15 @@
+@use 'global' as *;
+
+.input-textarea {
+	appearance: none;
+	max-width: 100%;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:disabled {
+		opacity: .2;
+		pointer-events: none;
+	}
+}

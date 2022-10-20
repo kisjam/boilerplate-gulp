@@ -1,21 +1,22 @@
-@use 'global' as g;
+@use 'global' as *;
+$step-padding: 4;
 
 @mixin padding {
 	@for $i from 0 through 50 {
-		&t-#{$i * 5} {
-			padding-top: #{$i * 5}px;
+		&t-#{$i * $step-padding} {
+			padding-top: #{$i * $step-padding}px;
 		}
 
-		&r-#{$i * 5} {
-			padding-right: #{$i * 5}px;
+		&r-#{$i * $step-padding} {
+			padding-right: #{$i * $step-padding}px;
 		}
 
-		&b-#{$i * 5} {
-			padding-bottom: #{$i * 5}px;
+		&b-#{$i * $step-padding} {
+			padding-bottom: #{$i * $step-padding}px;
 		}
 
-		&l-#{$i * 5} {
-			padding-left: #{$i * 5}px;
+		&l-#{$i * $step-padding} {
+			padding-left: #{$i * $step-padding}px;
 		}
 	}
 }
@@ -24,19 +25,19 @@
 	@include padding;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:p {
 		@include padding;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:p {
 		@include padding;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:p {
 		@include padding;
 	}

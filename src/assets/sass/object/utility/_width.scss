@@ -1,55 +1,56 @@
-@use 'global' as g;
+@use 'global' as *;
+$step-width: 5;
 
 @mixin width {
 	&-auto {
-		width: auto;
+		width: auto !important;
 	}
 
 	&-full {
-		width: 100%;
+		width: 100% !important;
 	}
 
 	@for $i from 0 through 300 {
-		&-#{$i * 5} {
-			width: #{$i * 5}px;
+		&-#{$i * $step-width} {
+			width: #{$i * $step-width}px !important;
 		}
 	}
 
 	@for $i from 0 through 20 {
-		&-#{$i * 5}per {
-			width: #{$i * 5}per;
+		&-#{$i * $step-width}per {
+			width: #{$i * $step-width}per !important;
 		}
 	}
 }
 
 @mixin max-width {
 	&-none {
-		max-width: none;
+		max-width: none !important;
 	}
 
 	&-full {
-		max-width: 100%;
+		max-width: 100% !important;
 	}
 
 	@for $i from 0 through 300 {
-		&-#{$i * 5} {
-			max-width: #{$i * 5}px;
+		&-#{$i * $step-width} {
+			max-width: #{$i * $step-width}px !important;
 		}
 	}
 }
 
 @mixin min-width {
 	&-none {
-		min-width: none;
+		min-width: none !important;
 	}
 
 	&-full {
-		min-width: 100%;
+		min-width: 100% !important;
 	}
 
 	@for $i from 0 through 300 {
-		&-#{$i * 5} {
-			min-width: #{$i * 5}px;
+		&-#{$i * $step-width} {
+			min-width: #{$i * $step-width}px !important;
 		}
 	}
 }
@@ -66,7 +67,7 @@
 	@include min-width;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:w {
 		@include width;
 	}
@@ -80,7 +81,7 @@
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:w {
 		@include width;
 	}
@@ -94,7 +95,7 @@
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:w {
 		@include width;
 	}

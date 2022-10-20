@@ -1,0 +1,118 @@
+{% extends '_layouts/_default.njk' %}
+{% set pageTitle = 'デモ | Boilerplate for static website' %}
+{% set pageDescription = '' %}
+{% set pagekeywords = '' %}
+{%
+set breadcrumbs = [
+{item: 'トップページ', href: '/'},
+{item: 'DEMO', href: '/demo/'}
+]
+%}
+
+{% block css -%}{% endblock %}
+
+{% block contents -%}
+
+{%- include '_partials/_breadcrumb.njk' %}
+
+<main class="main">
+	<div class="page-main sa">
+		<div class="page-main__body" data-styleguide>
+			<h1>見出し1</h1>
+			<h2>見出し2</h2>
+			<h3>見出し3</h3>
+			<h4>見出し4</h4>
+			<h5>見出し5</h5>
+			<h6>見出し6</h6>
+			<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+			<ol>
+				<li>計画</li>
+				<li>実行</li>
+				<li>評価</li>
+				<li>改善</li>
+			</ol>
+			<ul>
+				<li>りんご</li>
+				<li>ばなな</li>
+				<li>ぶどう</li>
+			</ul>
+
+			<table>
+				<thead>
+					<tr>
+						<th>サイズ</th>
+						<th>単語</th>
+						<th>ほげ</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>小</td>
+						<td>xs</td>
+						<td>ふー</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tbody>
+					<tr>
+						<th>フルーツバスケット</th>
+						<td>りんご、ばなな、ぶどう</td>
+					</tr>
+					<tr>
+						<th>フルーツパフェ</th>
+						<td>ますかっと、もも、いちじく</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<figure>
+				<img src="http://placekitten.com/200/300" alt="">
+				<figcaption>猫の画像</figcaption>
+			</figure>
+
+		</div>
+	</div>
+
+</main>
+
+{%- endblock %}
+
+{% block js -%}
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-html.js" defer></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const map = {
+			"&": "&",
+			'"': '"',
+			"<": "<",
+			">": ">",
+			"'": "'",
+			'`': '`'
+		};
+
+		document.querySelectorAll('[data-styleguide] > *').forEach(function (val) {
+			let pre = document.createElement('pre');
+			pre.classList.add('prettyprint');
+			pre.classList.add('lang-html');
+			let code = val.outerHTML;
+			code = code.replace(/[&"<>]/g, match => map[match]);
+			code = html_beautify(code, {
+				indent_size: 1,
+				"indent_char": "	",
+				space_in_empty_paren: true
+			});
+			pre.textContent = code;
+			val.parentNode.insertBefore(pre, val.nextElementSibling);
+		});
+		PR.prettyPrint();
+	}, false);
+</script>
+<style>
+	body pre.prettyprint {
+		line-height: 1.4;
+		width: 100%;
+	}
+</style>
+{% endblock %}

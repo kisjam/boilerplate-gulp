@@ -1,0 +1,13 @@
+/*
+/* Mixin
+/*
+----------------------------------------------------------------- */
+@use 'global/variable/' as var;
+
+@mixin hover-opacity($opacity: 0.8) {
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		opacity: $opacity;
+	}
+}

@@ -1,4 +1,4 @@
-@use 'global' as g;
+@use 'global' as *;
 
 @mixin hidden {
 	display: none;
@@ -8,25 +8,25 @@
 	@include hidden;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:hidden {
 		@include hidden;
 	}
 }
 
-@include g.mq(tablet, true) {
+@include mq(tablet, true) {
 	.tab\:hidden {
 		@include hidden;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:hidden {
 		@include hidden;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:hidden {
 		@include hidden;
 	}

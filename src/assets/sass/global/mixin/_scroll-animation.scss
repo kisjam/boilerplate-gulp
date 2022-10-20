@@ -1,0 +1,13 @@
+@use 'global/variable/' as var;
+
+@mixin sa-transition() {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity .6s ease,
+		transform .6s ease;
+}
+
+@mixin sa-run() {
+	opacity: 1;
+	transform: translateY(0);
+}

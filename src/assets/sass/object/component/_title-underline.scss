@@ -1,0 +1,23 @@
+@use 'global' as *;
+
+@mixin title-underline {
+	&:not(:first-child) {
+		margin-top: 80px;
+
+		@include mq(sp) {
+			margin-top: 40px;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 24px;
+	}
+
+	font-size: 2.4rem;
+	font-weight: bold;
+	border-bottom: 1px solid $color-black;
+}
+
+.title-underline {
+	@include title-underline;
+}

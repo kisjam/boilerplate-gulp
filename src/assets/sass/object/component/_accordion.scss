@@ -1,0 +1,49 @@
+@use 'global' as *;
+
+.accordion {
+	$this: &;
+	background: #eef;
+
+	&__header {
+		position: relative;
+		display: block;
+		padding: 16px;
+		cursor: pointer;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			width: 14px;
+			height: 2px;
+			background-color: #aaf;
+			transition: transform .3s ease;
+
+			#{$this}[open] & {
+				transform: rotate(360deg);
+			}
+		}
+
+		&::before {
+			transform: rotate(90deg);
+		}
+
+		&::after {
+			transform: rotate(180deg);
+		}
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+
+	&__body {
+		border-top: 1px solid #ddf;
+		padding: 16px;
+		display: none;
+	}
+
+	&[open] {}
+}

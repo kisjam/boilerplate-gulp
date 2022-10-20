@@ -1,0 +1,13 @@
+@use 'global' as *;
+
+.swipe {
+	@include mq(sp) {
+		overflow: auto;
+	}
+
+	&__inner {
+		@include mq(sp) {
+			width: $width-content;
+		}
+	}
+}

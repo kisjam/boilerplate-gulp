@@ -1,4 +1,4 @@
-@use 'global' as g;
+@use 'global' as *;
 
 @mixin whitespace {
 	&-nowrap {
@@ -10,19 +10,19 @@
 	@include whitespace;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:whitespace {
 		@include whitespace;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:whitespace {
 		@include whitespace;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:whitespace {
 		@include whitespace;
 	}

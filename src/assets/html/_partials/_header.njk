@@ -1,6 +1,22 @@
 <header class="site-header">
 	<div class="site-header__inner">
-		<h1 class="logo"><a href="/"></a></h1>
-		<button class="nav__btn"></button>
+		<div class="site-header__logo">
+			<h1 class="header-logo"><a href="/">Boilerplate for static website</a></h1>
+		</div>
+		<div class="site-header__nav">
+			{%- include '_partials/_nav.njk' %}
+		</div>
+	</div>
+	<div class="site-header__menu-button">
+		<button class="site-menu-button">
+			<div class="site-menu-button__top"></div>
+			<div class="site-menu-button__middle"></div>
+			<div class="site-menu-button__bottom"></div>
+		</button>
 	</div>
 </header>
+<div class="site-menu">
+	<div class="site-menu__inner">
+		{%- include '_partials/_nav.njk' %}
+	</div>
+</div>

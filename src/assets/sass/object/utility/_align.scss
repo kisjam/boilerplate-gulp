@@ -1,4 +1,4 @@
-@use 'global' as g;
+@use 'global' as *;
 
 @mixin align {
 	&-c {
@@ -18,19 +18,19 @@
 	@include align;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:align {
 		@include align;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:align {
 		@include align;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:align {
 		@include align;
 	}

@@ -1,9 +1,0 @@
-@use 'global' as g;
-
-.sa-fade {
-	@include g.sa-transition();
-
-	&.-run {
-		@include g.sa-run();
-	}
-}

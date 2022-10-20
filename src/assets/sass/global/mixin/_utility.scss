@@ -1,0 +1,70 @@
+@use 'global/variable/' as var;
+
+@mixin icon($iconfont) {
+	font-family: 'icon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-indent: 0;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: $iconfont;
+}
+
+@mixin mq($point, $min: false) {
+	@if(type-of($point)==list) {
+		$bp1: '';
+		$bp2: '';
+
+		@if(map-get(var.$breakpoints, nth($point, 1))) {
+			$bp1: map-get(var.$breakpoints, nth($point, 1))+1;
+		}
+
+		@else {
+			$bp1: nth($point, 1);
+		}
+
+		@if(map-get(var.$breakpoints, nth($point, 2))) {
+			$bp2: map-get(var.$breakpoints, nth($point, 2));
+		}
+
+		@else {
+			$bp2: nth($point, 2);
+		}
+
+		@media screen and (min-width: $bp1) and (max-width: $bp2) {
+			@content;
+		}
+	}
+
+	@else if ($min) {
+		@if(map-get(var.$breakpoints, $point)) {
+			@media screen and (min-width: (map-get(var.$breakpoints, $point)+1)) {
+				@content;
+			}
+		}
+
+		@else {
+			@media screen and (min-width: $point) {
+				@content;
+			}
+		}
+	}
+
+	@else {
+		@if(map-get(var.$breakpoints, $point)) {
+			@media screen and (max-width: map-get(var.$breakpoints, $point)) {
+				@content;
+			}
+		}
+
+		@else {
+			@media screen and (max-width: $point) {
+				@content;
+			}
+		}
+	}
+}

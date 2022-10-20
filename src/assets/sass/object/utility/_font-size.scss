@@ -1,4 +1,4 @@
-@use 'global' as g;
+@use 'global' as *;
 
 @mixin fz {
 	@for $i from 10 through 30 {
@@ -12,19 +12,19 @@
 	@include fz;
 }
 
-@include g.mq(sp, true) {
+@include mq(sp, true) {
 	.pc\:fz {
 		@include fz;
 	}
 }
 
-@include g.mq(tablet) {
+@include mq(tablet) {
 	.md\:fz {
 		@include fz;
 	}
 }
 
-@include g.mq(sp) {
+@include mq(sp) {
 	.sm\:fz {
 		@include fz;
 	}

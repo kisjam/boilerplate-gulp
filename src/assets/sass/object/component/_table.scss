@@ -1,0 +1,26 @@
+@use 'global' as *;
+
+@mixin table {
+	width: 100%;
+	border-left: 1px solid $color-black;
+	border-top: 1px solid $color-black;
+
+	th,
+	td {
+		padding: 16px;
+	}
+
+	th {
+		border-right: 1px solid $color-black;
+		border-bottom: 1px solid $color-black;
+	}
+
+	td {
+		border-right: 1px solid $color-black;
+		border-bottom: 1px solid $color-black;
+	}
+}
+
+.table {
+	@include table;
+}
