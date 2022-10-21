@@ -23,8 +23,8 @@ export default class Accordion {
 
 		const defaultOption: Option = {
 			selector: '[data-accordion]',
-			headerSelector: '',
-			bodySelector: '',
+			headerSelector: '[data-accordion-header]',
+			bodySelector: '[data-accordion-body]',
 			duration: 400
 		}
 
@@ -42,8 +42,7 @@ export default class Accordion {
 	}
 	registEventHandler(elem: HTMLDetailsElement): void {
 
-		const headerElem = elem.querySelector(this.option.headerSelector);
-		const bodyElem = elem.querySelector(this.option.bodySelector);
+		const headerElem = elem.querySelector<HTMLElement>(this.option.headerSelector);
 
 		headerElem?.addEventListener('click', (e) => {
 			e.preventDefault();
