@@ -33,9 +33,7 @@ export default class Accordion {
 		document.addEventListener('DOMContentLoaded', () => {
 			const elems = document.querySelectorAll<HTMLDetailsElement>(this.option.selector);
 
-			if (elems === null) return;
-
-			elems.forEach((elem) => {
+			elems?.forEach((elem) => {
 				this.registEventHandler(elem);
 			})
 		})
