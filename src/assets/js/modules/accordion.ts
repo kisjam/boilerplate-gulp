@@ -1,13 +1,18 @@
-const $ = require("jquery");
+// const $ = require("jquery");
+import $ from 'jquery';
 
 interface Option {
 	selector: string;
+	headerSelector: string;
+	bodySelector: string;
 	duration: number;
 }
 
 interface CustonOption {
 	selector?: string;
-	duration?: number;
+	headerSelector: string;
+	bodySelector: string;
+	duration: number;
 }
 
 export default class Accordion {
@@ -18,6 +23,8 @@ export default class Accordion {
 
 		const defaultOption: Option = {
 			selector: '[data-accordion]',
+			headerSelector: '',
+			bodySelector: '',
 			duration: 400
 		}
 
@@ -35,17 +42,17 @@ export default class Accordion {
 	}
 	registEventHandler(elem: HTMLDetailsElement): void {
 
-		const headerElem = elem.querySelector('[data-accordion-header]');
-		const bodyElem = elem.querySelector('[data-accordion-body]');
+		const headerElem = elem.querySelector(this.option.headerSelector);
+		const bodyElem = elem.querySelector(this.option.bodySelector);
 
 		headerElem?.addEventListener('click', (e) => {
 			e.preventDefault();
 
 			if (elem.open) {
-				$(bodyElem).stop().slideUp(this.option.duration, () => elem.open = false);
+				$(this.option.bodySelector).stop().slideUp(this.option.duration, () => elem.open = false);
 			} else {
 				elem.open = true;
-				$(bodyElem).stop().slideDown(this.option.duration);
+				$(this.option.bodySelector).stop().slideDown(this.option.duration);
 			}
 		})
 	}
