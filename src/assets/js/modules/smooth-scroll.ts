@@ -42,8 +42,10 @@ export default class SmoothScroll {
 			const targetElem = document.querySelector<HTMLElement>(hash);
 			if (targetElem === null) return;
 
+			const targetElemRect = targetElem.getBoundingClientRect();
+
 			window.scrollTo({
-				top: targetElem.offsetTop + u.scrollGap,
+				top: targetElemRect.top - u.wy + u.scrollGap,
 				left: 0,
 				behavior: 'smooth'
 			});

@@ -2450,7 +2450,7 @@ button.swiper-pagination-bullet {
   display: none;
 }
 .input-checkbox__input:checked + .input-checkbox__label::before {
-  background: #ccc;
+  background: #f00;
 }
 .input-checkbox__label {
   position: relative;

@@ -19,7 +19,7 @@
 
 		&:checked+#{$this}__label {
 			&::before {
-				background: #ccc;
+				background: #f00;
 			}
 		}
 	}
