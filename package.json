@@ -14,7 +14,6 @@
     "@types/jquery": "^3.5.14",
     "browser-sync": "^2.26.7",
     "del": "^7.0.0",
-    "gsap": "^3.10.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-consolidate": "^0.2.0",
@@ -35,7 +34,6 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
     "jquery": "^3.6.1",
-    "lodash.throttle": "^4.1.1",
     "promise-polyfill": "^8.2.1",
     "sass": "^1.55.0",
     "slick-carousel": "^1.8.1",
@@ -43,7 +41,6 @@
     "swiper": "^8.4.4",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
-    "vue": "^3.2.37",
     "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
   }
