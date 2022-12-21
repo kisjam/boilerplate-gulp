@@ -1,4 +1,4 @@
-# boilerplate-gulp 2.0.3
+# boilerplate-gulp
 node.js - v16.17.1
 npm - v8.19.2
 
@@ -6,5 +6,4 @@ npm - v8.19.2
 * Sass
 * Nunjucks
 * Webpack
-* iconfont
 * image optimize

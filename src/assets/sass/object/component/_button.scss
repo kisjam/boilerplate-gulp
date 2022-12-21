@@ -1,4 +1,5 @@
 @use 'global' as *;
+@use "smart-svg";
 
 .button {
 	position: relative;
@@ -32,6 +33,22 @@
 
 		@include mq(sp) {
 			font-size: 1.4rem;
+		}
+
+		&::after {
+			@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, #fff);
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: background-color .3s ease;
+		}
+
+		&:hover {
+			&::after {
+				@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, #f00);
+			}
+
 		}
 	}
 }

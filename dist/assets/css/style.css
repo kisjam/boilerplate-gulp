@@ -2389,6 +2389,18 @@ button.swiper-pagination-bullet {
   }
 }
 
+/** Show icons only. */
+/** Displayed with square background. */
+/** Shown with circular background. */
+/** Style settings for the box. */
+/** style settings for the background. */
+/** style settings related to borders. */
+/**
+ * Calculate the size of the svg.
+ *
+ * If $priority-size is specified, it takes precedence.
+ * If $priority-size is not specified, the size of the SVG is a fixed percentage of $element-size.
+ */
 .button {
   position: relative;
 }
@@ -2431,6 +2443,47 @@ button.swiper-pagination-bullet {
 .button button {
     font-size: 1.4rem;
   }
+}
+.button a::after,
+.button button::after {
+  content: "";
+  pointer-events: none;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-color: #fff;
+  mask-image: url("https://cdn.svgporn.com/logos/react.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://cdn.svgporn.com/logos/react.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.button a:hover::after,
+.button button:hover::after {
+  content: "";
+  pointer-events: none;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-color: #f00;
+  mask-image: url("https://cdn.svgporn.com/logos/react.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://cdn.svgporn.com/logos/react.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 /*
