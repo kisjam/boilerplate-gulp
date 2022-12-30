@@ -2412,6 +2412,7 @@ button.swiper-pagination-bullet {
 }
 .button a,
 .button button {
+  --fill-color: #fff;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2451,7 +2452,7 @@ button.swiper-pagination-bullet {
   display: inline-block;
   width: 2em;
   height: 2em;
-  background-color: #fff;
+  background-color: var(--fill-color);
   mask-image: url("https://cdn.svgporn.com/logos/react.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -2470,20 +2471,7 @@ button.swiper-pagination-bullet {
 }
 .button a:hover::after,
 .button button:hover::after {
-  content: "";
-  pointer-events: none;
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  background-color: #f00;
-  mask-image: url("https://cdn.svgporn.com/logos/react.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-image: url("https://cdn.svgporn.com/logos/react.svg");
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
+  --fill-color: #f00;
 }
 
 /*

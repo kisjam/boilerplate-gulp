@@ -14,6 +14,7 @@
 
 	a,
 	button {
+		--fill-color: #fff;
 		appearance: none;
 		position: relative;
 		display: flex;
@@ -36,7 +37,7 @@
 		}
 
 		&::after {
-			@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, #fff);
+			@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, var(--fill-color));
 			position: absolute;
 			right: 16px;
 			top: 50%;
@@ -46,7 +47,7 @@
 
 		&:hover {
 			&::after {
-				@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, #f00);
+				--fill-color: #f00;
 			}
 
 		}
