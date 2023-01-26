@@ -1,14 +1,9 @@
 @use 'global' as *;
 
-html {
-	font-size: 62.5%;
-	background: $color-white;
-}
-
 body {
 	font-family: $ff-noto-sans;
 	color: $color-black;
-	font-size: 1.6rem;
+	font-size: rem(16);
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

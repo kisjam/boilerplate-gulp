@@ -1,0 +1,13 @@
+@use 'global/mixin/' as *;
+
+:root {
+	--variable-fz-24: rem(24);
+
+	@include mq(tablet) {
+		--variable-fz-24: rem(20);
+	}
+
+	@include mq(sp) {
+		--variable-fz-24: rem(18);
+	}
+}

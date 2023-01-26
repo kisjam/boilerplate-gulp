@@ -16,7 +16,7 @@ interface Utility {
 const u: Utility = {
 	ww: window.innerWidth,
 	wh: window.innerHeight,
-	wy: window.scrollY,
+	wy: window.pageYOffset,
 	mq: window.matchMedia('(max-width: 768px)'),
 	scrollGap: 0,
 
@@ -34,7 +34,7 @@ const u: Utility = {
 		this.wh = window.innerHeight;
 	},
 	updateWindowOffset: function () {
-		this.wy = window.scrollY;
+		this.wy = window.pageYOffset;
 	},
 	mpEvent: function () {
 		if (this.mq.matches) {

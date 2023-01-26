@@ -5,16 +5,13 @@ import images from './gulp/task/images.mjs';
 import js from './gulp/task/js.mjs';
 import css from './gulp/task/css.mjs';
 import html from './gulp/task/html.mjs';
-// import icon from './gulp/task/icon.mjs';
 import server from './gulp/task/server.mjs';
 import copyAssets from './gulp/task/copy-assets.mjs';
-import purgeCss from './gulp/task/purge-css.mjs';
 
 export const watch = () => {
 	gulp.watch(dir.src.images + '**/*', gulp.series(images));
 	gulp.watch(dir.src.stylesheets + '**/*', gulp.series(css));
 	gulp.watch(dir.src.javascripts + '**/*', gulp.series(js));
-	// gulp.watch(dir.src.svg + '**/*', gulp.series(icon));
 	gulp.watch(dir.src.root + '**/*' + '.njk', gulp.series(html));
 	gulp.watch(dir.src.other + '**/*', gulp.series(copyAssets));
 	gulp.watch(['*.html', '*.php', '*.njk']).on('change', function () {
@@ -31,9 +28,6 @@ export const watch = () => {
 		console.log('Deleted files:\n', deletedFilePaths.join('\n'));
 	})
 }
-
-// npx gulp build
-export const build = gulp.series(purgeCss);
 
 // npx gulp
 export const run = gulp.series(images, js, css, html, copyAssets);

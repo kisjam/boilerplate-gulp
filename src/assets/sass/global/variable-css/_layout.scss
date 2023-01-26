@@ -1,0 +1,13 @@
+@use 'global/mixin/' as *;
+
+:root {
+	--padding-side: 20px;
+
+	@include mq(tablet) {
+		--padding-side: 32px;
+	}
+
+	@include mq(desktop) {
+		--padding-side: 60px;
+	}
+}

@@ -7,10 +7,8 @@
 	@if $letter-spacing {
 		letter-spacing: #{$letter-spacing / 1000}em;
 	}
+}
 
-	@else {
-		letter-spacing: normal;
-
-	}
-
+@function ls($letter-spacing) {
+	@return #{math.div($letter-spacing, 1000)}em;
 }

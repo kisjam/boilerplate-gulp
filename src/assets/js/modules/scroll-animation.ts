@@ -39,9 +39,9 @@ export default class ScrollAnimation {
 	registEventHandler(elem: HTMLElement): void {
 
 		const rendar = () => {
-			let targetPosY = elem.offsetTop;
+			let targetPosY = elem.getBoundingClientRect().top;
 
-			if (u.wy + u.wh * this.option.fireRange > targetPosY) {
+			if (u.wy + u.wh * this.option.fireRange > targetPosY + u.wy) {
 				window.removeEventListener('scroll', rendar);
 				elem.classList.add(this.option.fireClass);
 			}

@@ -6,7 +6,6 @@ import imagemin from 'gulp-imagemin';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
-import imageminSvgo from 'imagemin-svgo';
 import browserSync from 'browser-sync';
 
 const images = () => {
@@ -19,12 +18,6 @@ const images = () => {
 			imageminPngquant({
 				quality: [.65, .80],
 				speed: 1,
-			}),
-			imageminSvgo({
-				plugins: [
-					{ removeViewBox: true },
-					{ cleanupIDs: false }
-				]
 			})
 		]))
 		.pipe(gulp.dest(dir.build.images))
