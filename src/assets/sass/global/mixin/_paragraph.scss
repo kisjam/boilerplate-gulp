@@ -1,14 +1,16 @@
-@use 'global/variable/' as var;
-
 @mixin paragraph($font-size, $line-height: 28, $letter-spacing: null) {
-	font-size: #{$font-size * 0.1}rem;
-	line-height: $line-height / $font-size;
+	font-size: #{math.div($font-size, 16)}rem;
+	line-height: math.div($line-height, $font-size);
 
 	@if $letter-spacing {
-		letter-spacing: #{$letter-spacing / 1000}em;
+		letter-spacing: ls($letter-spacing);
 	}
 }
 
 @function ls($letter-spacing) {
 	@return #{math.div($letter-spacing, 1000)}em;
+}
+
+@function lh($line-height, $font-size) {
+	@return $line-height / $font-size;
 }
