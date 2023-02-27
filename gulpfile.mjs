@@ -6,7 +6,7 @@ import js from './gulp/task/js.mjs';
 import css from './gulp/task/css.mjs';
 import html from './gulp/task/html.mjs';
 import server from './gulp/task/server.mjs';
-import copyAssets from './gulp/task/copy-assets.mjs';
+import {copyAssets, copyPublic} from './gulp/task/copy-files.mjs';
 
 export const watch = () => {
 	gulp.watch(dir.src.images + '**/*', gulp.series(images));
@@ -14,6 +14,7 @@ export const watch = () => {
 	gulp.watch(dir.src.javascripts + '**/*', gulp.series(js));
 	gulp.watch(dir.src.root + '**/*' + '.njk', gulp.series(html));
 	gulp.watch(dir.src.other + '**/*', gulp.series(copyAssets));
+	gulp.watch(dir.src.public + '**/*', gulp.series(copyPublic));
 	gulp.watch(['*.html', '*.php', '*.njk']).on('change', function () {
 		browserSync.reload();
 	})

@@ -9,7 +9,8 @@ const dir = {
 		html: 'src/assets/html/pages/',
 		pdf: 'src/assets/html/pdf/',
 		video: 'src/assets/html/video/',
-		other: 'src/assets/other/'
+		other: 'src/assets/other/',
+		public: 'src/public/'
 	},
 	build: {
 		root: 'dist/',
@@ -21,7 +22,8 @@ const dir = {
 		html: 'dist/',
 		pdf: 'dist/assets/html/pdf/',
 		video: 'dist/assets/html/video/',
-		other: 'dist/assets/'
+		other: 'dist/assets/',
+		public: 'dist/'
 	},
 	njk: {
 		root: 'src/assets/html',
