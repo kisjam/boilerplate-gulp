@@ -1,4 +1,4 @@
-@use 'global/variable-sass/' as var;
+@use "global/variable-sass/" as var;
 
 @mixin hover {
 	@media (any-hover: hover) {
@@ -9,53 +9,41 @@
 }
 
 @mixin mq($point, $min: false) {
-	@if(type-of($point)==list) {
-		$bp1: '';
-		$bp2: '';
+	@if (type-of($point) ==list) {
+		$bp1: "";
+		$bp2: "";
 
-		@if(map-get(var.$breakpoints, nth($point, 1))) {
-			$bp1: map-get(var.$breakpoints, nth($point, 1))+1;
-		}
-
-		@else {
+		@if (map-get(var.$breakpoints, nth($point, 1))) {
+			$bp1: map-get(var.$breakpoints, nth($point, 1)) + 1;
+		} @else {
 			$bp1: nth($point, 1);
 		}
 
-		@if(map-get(var.$breakpoints, nth($point, 2))) {
+		@if (map-get(var.$breakpoints, nth($point, 2))) {
 			$bp2: map-get(var.$breakpoints, nth($point, 2));
-		}
-
-		@else {
+		} @else {
 			$bp2: nth($point, 2);
 		}
 
 		@media screen and (min-width: $bp1) and (max-width: $bp2) {
 			@content;
 		}
-	}
-
-	@else if ($min) {
-		@if(map-get(var.$breakpoints, $point)) {
+	} @else if ($min) {
+		@if (map-get(var.$breakpoints, $point)) {
 			@media screen and (min-width: (map-get(var.$breakpoints, $point)+1)) {
 				@content;
 			}
-		}
-
-		@else {
+		} @else {
 			@media screen and (min-width: $point) {
 				@content;
 			}
 		}
-	}
-
-	@else {
-		@if(map-get(var.$breakpoints, $point)) {
+	} @else {
+		@if (map-get(var.$breakpoints, $point)) {
 			@media screen and (max-width: map-get(var.$breakpoints, $point)) {
 				@content;
 			}
-		}
-
-		@else {
+		} @else {
 			@media screen and (max-width: $point) {
 				@content;
 			}

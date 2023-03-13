@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-	<head><meta charset="UTF-8">
+<!doctype html><html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,7 +16,7 @@
 </head>
 
 	<body class="index">
-		<div class="container"><header class="site-header">
+		<div class="site-container"><header class="site-header">
 	<div class="site-header__inner">
 		<div class="site-header__logo">
 			<h1 class="header-logo"><a href="/">Boilerplate for static website</a></h1>
@@ -70,22 +68,10 @@
 
 	</div>
 </div>
-
-<nav aria-label="breadcrumb" class="breadcrumb">
-	<div class="breadcrumb__inner">
-		<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__list">
-			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" aria-current="page" class="breadcrumb__list__item">
-				<a href="/" itemprop="item" class="breadcrumb__list__permalink">
-					<span itemprop="name" class="breadcrumb__list__name">トップページ</span>
-				</a>
-				<meta itemprop="position" content="1">
-			</li>
-		</ol>
-	</div>
-</nav>
-
-
-<main class="main">
+<div id="dcms_layoutPageBlockPasteArea">
+				<div id="dcms_layoutPageBlock">
+					<!--###DCMS_BLOCK_START###--><div class="hoge"></div><!--###DCMS_BLOCK_END###-->
+<!--###DCMS_BLOCK_START###--><main class="main">
 	<section>
 		<h2>概要</h2>
 		<p>静的サイトを作り始める際のスターターキットと、個人的な運用ルールまとめです。</p>
@@ -100,12 +86,14 @@
 		</p>
 		<p class="sample">hogehoge</p>
 	</section>
-</main><footer class="site-footer">
+</main><!--###DCMS_BLOCK_END###-->
+				</div>
+			</div><footer class="site-footer">
 	<div class="site-footer__inner">
 		<div class="site-footer__copyright">
 			<p class="footer-copyright"><small>kisjam.com</small></p>
 		</div>
 	</div>
 </footer></div>
-	<script src="/assets/js/bundle.js"></script></body>
-</html>
+		<script src="/assets/js/bundle.js"></script>
+</body></html>

@@ -1,14 +1,14 @@
-import dir from '../config.mjs';
-import browserSync from 'browser-sync';
+import { dir } from "../config.mjs";
+import browserSync from "browser-sync";
 
-const server = done => {
+const server = (done) => {
 	browserSync.init({
-		open: 'external',
+		open: "external",
 		server: {
-			baseDir: dir.build.root
-		}
-	})
+			baseDir: dir.build.root,
+		},
+	});
 	done();
-}
+};
 
 export default server;

@@ -6,14 +6,18 @@
 	</head>
 
 	<body class="{{ filename | join('-') }}">
-		<div class="container">
+		<div class="site-container">
 			{%- include '_partials/_header.njk' -%}
 
-			{% block contents %}{% endblock %}
+			<div id="dcms_layoutPageBlockPasteArea">
+				<div id="dcms_layoutPageBlock">
+					{% block contents %}{% endblock %}
+				</div>
+			</div>
 
 			{%- include '_partials/_footer.njk' -%}
 		</div>
-	<script src="/assets/js/bundle.js"></script>
-	{%- block js -%}{%- endblock -%}
+		<script src="/assets/js/bundle.js"></script>
+		{%- block js -%}{%- endblock -%}
 	</body>
 </html>

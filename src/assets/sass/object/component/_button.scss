@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 @use "smart-svg";
 
 .button {
@@ -29,7 +29,7 @@
 		max-width: 200px;
 		margin-left: auto;
 		margin-right: auto;
-		transition: color .3s ease;
+		transition: color 0.3s ease;
 		cursor: pointer;
 
 		@include mq(sp) {
@@ -37,19 +37,22 @@
 		}
 
 		&::after {
-			@include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 2em, var(--fill-color));
+			@include smart-svg.show-with-pseudo(
+				"https://cdn.svgporn.com/logos/react.svg",
+				2em,
+				var(--fill-color)
+			);
 			position: absolute;
 			right: 16px;
 			top: 50%;
 			transform: translateY(-50%);
-			transition: background-color .3s ease;
+			transition: background-color 0.3s ease;
 		}
 
 		&:hover {
 			&::after {
 				--fill-color: #f00;
 			}
-
 		}
 	}
 }
