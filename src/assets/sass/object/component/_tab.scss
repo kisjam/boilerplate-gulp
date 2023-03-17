@@ -1,11 +1,11 @@
-@use 'global' as *;
+@use "global" as *;
 
 .tab {
-	&__list {}
+	&__list {
+	}
 
 	&__list-item {
-
-		}
+	}
 
 	&__list-button {
 		appearance: none;

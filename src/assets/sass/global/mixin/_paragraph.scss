@@ -1,5 +1,8 @@
+@use "sass:math";
+@use "global/variable-sass/" as var;
+
 @mixin paragraph($font-size, $line-height: 28, $letter-spacing: null) {
-	font-size: #{math.div($font-size, 16)}rem;
+	font-size: #{math.div($font-size, var.$base-font-size)}rem;
 	line-height: math.div($line-height, $font-size);
 
 	@if $letter-spacing {
@@ -12,5 +15,5 @@
 }
 
 @function lh($line-height, $font-size) {
-	@return $line-height / $font-size;
+	@return #{math.div($line-height, $font-size)};
 }

@@ -1,6 +1,25 @@
-@forward "global/variable-sass/_breakpoint";
-@forward "global/variable-sass/_color";
-@forward "global/variable-sass/_font-family";
-@forward "global/variable-sass/_font-weight";
-@forward "global/variable-sass/_margin";
-@forward "global/variable-sass/_width";
+$base-font-size: 16;
+
+$ff-noto-sans: "Noto Sans JP", sans-serif;
+$ff-noto-serif: "Noto Serif JP", serif;
+
+$fw-thin: 100;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+$color-black: #333;
+$color-white: #fff;
+$color-assort: "";
+$color-accent: "";
+
+$breakpoints: (
+	desktop: 1200px,
+	tablet: 992px,
+	sp: 768px,
+);
+
+$width-content: 1200px;

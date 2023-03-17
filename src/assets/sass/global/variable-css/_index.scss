@@ -1,2 +1,23 @@
-@forward "global/variable-css/_font-size";
-@forward "global/variable-css/_layout";
+@use "global/mixin/" as *;
+
+:root {
+	--padding-side: 20px;
+
+	@include mq(tablet) {
+		--padding-side: 32px;
+	}
+
+	@include mq(desktop) {
+		--padding-side: 60px;
+	}
+
+	--variable-fz-24: rem(24);
+
+	@include mq(tablet) {
+		--variable-fz-24: rem(20);
+	}
+
+	@include mq(sp) {
+		--variable-fz-24: rem(18);
+	}
+}

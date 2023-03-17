@@ -4,14 +4,6 @@
 .button {
 	position: relative;
 
-	&:not(:first-child) {
-		margin-top: $m-base;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: $m-base;
-	}
-
 	a,
 	button {
 		--fill-color: #fff;
@@ -31,10 +23,6 @@
 		margin-right: auto;
 		transition: color 0.3s ease;
 		cursor: pointer;
-
-		@include mq(sp) {
-			font-size: 1.4rem;
-		}
 
 		&::after {
 			@include smart-svg.show-with-pseudo(
