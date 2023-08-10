@@ -1,24 +1,26 @@
 import u from "./utility";
 
 const initDisplayPosition = (): void => {
-
 	const hash: string = window.location.hash;
 
-	if (hash === '') return;
+	if (hash === "") return;
 
-	window.location.hash = hash + '_';
+	window.location.hash = hash + "_";
 
-	window.addEventListener('load', (): void => {
+	window.addEventListener("load", (): void => {
 		const targetElem = document.querySelector<HTMLElement>(hash);
 
 		if (targetElem === null) return;
 
 		setTimeout(() => {
-			window.scrollTo(0, targetElem.offsetTop + u.scrollGap);
-		}, 1);
+			window.scrollTo(
+				0,
+				targetElem.getBoundingClientRect().top + u.wy + u.scrollGap
+			);
+		}, 10);
 
-		window.location.hash = hash;
+		history.replaceState(null, "", hash);
 	});
-}
+};
 
 export default initDisplayPosition;
