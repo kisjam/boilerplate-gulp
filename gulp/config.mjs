@@ -1,6 +1,3 @@
-export const setting = {
-	bmMode: true,
-};
 export const dir = {
 	src: {
 		root: "src/",

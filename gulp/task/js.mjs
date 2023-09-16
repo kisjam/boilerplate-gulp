@@ -3,7 +3,7 @@ import gulp from "gulp";
 import plumber from "gulp-plumber";
 import webpack from "webpack";
 import webpackStream from "webpack-stream";
-import { dirname, resolve } from "path";
+import { dirname } from "path";
 import { fileURLToPath } from "url";
 import browserSync from "browser-sync";
 

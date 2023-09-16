@@ -1,5 +1,6 @@
 import gulp from "gulp";
 import { deleteAsync } from "del";
+import browserSync from "browser-sync";
 import { dir } from "./gulp/config.mjs";
 import images from "./gulp/task/images.mjs";
 import js from "./gulp/task/js.mjs";
