@@ -1,4 +1,4 @@
-import disableButtonDoubleclick from "./modules/disable-button-doubleclick";
+// import disableButtonDoubleclick from "./modules/disable-button-doubleclick";
 import initDisplayPosition from "./modules/init-display-position";
 import SmoothScroll from "./modules/smooth-scroll";
 import ScrollAnimation from "./modules/scroll-animation";
@@ -9,36 +9,21 @@ import Accordion from "./modules/accordion";
 import Tab from "./modules/tab";
 // import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
-import { Fancybox } from "@fancyapps/ui";
-
 new ScrollAnimation();
 new SwipeFigure();
 new CheckScrolled();
 new SmoothScroll();
 new NavManager();
 
-const accordions = document.querySelectorAll("[data-accordion]");
-accordions.forEach((accordionEl) => {
-	new Accordion(accordionEl);
+const accordionEls = document.querySelectorAll("[data-accordion]");
+accordionEls.forEach((accordionEl) => {
+	if (accordionEl instanceof HTMLButtonElement) {
+		new Accordion(accordionEl);
+	} else {
+		console.warn("Invalid element type for Accordion:", accordionEl);
+	}
 });
 
 new Tab();
 
 initDisplayPosition();
-
-// const swiper = new Swiper(".my-swiper", {
-// 	modules: [Navigation, Pagination, Autoplay],
-// 	pagination: {
-// 		el: ".swiper-pagination",
-// 	},
-// 	navigation: {
-// 		nextEl: ".swiper-button-next",
-// 		prevEl: ".swiper-button-prev",
-// 	},
-// });
-
-// Fancybox.bind("[data-fancybox]", {});
-
-document.addEventListener("DOMContentLoaded", () => {
-	disableButtonDoubleclick();
-});
