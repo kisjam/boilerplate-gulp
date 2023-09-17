@@ -1,4 +1,3 @@
-// import disableButtonDoubleclick from "./modules/disable-button-doubleclick";
 import initDisplayPosition from "./modules/init-display-position";
 import SmoothScroll from "./modules/smooth-scroll";
 import ScrollAnimation from "./modules/scroll-animation";
@@ -7,7 +6,6 @@ import CheckScrolled from "./modules/check-scrolled";
 import NavManager from "./modules/nav-manager";
 import Accordion from "./modules/accordion";
 import Tab from "./modules/tab";
-// import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
 new ScrollAnimation();
 new SwipeFigure();

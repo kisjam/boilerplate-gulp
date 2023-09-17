@@ -5,11 +5,10 @@ export const dir = {
 		javascripts: "src/assets/js/",
 		images: "src/assets/images/",
 		fonts: "src/assets/fonts/",
-		svg: "src/assets/svg/",
+		icon: "src/assets/icons/",
 		html: "src/assets/html/pages/",
 		pdf: "src/assets/html/pdf/",
 		video: "src/assets/html/video/",
-		other: "src/assets/other/",
 		public: "src/public/",
 	},
 	build: {
@@ -22,7 +21,6 @@ export const dir = {
 		html: "dist/",
 		pdf: "dist/assets/html/pdf/",
 		video: "dist/assets/html/video/",
-		other: "dist/assets/",
 		public: "dist/",
 	},
 	njk: {
