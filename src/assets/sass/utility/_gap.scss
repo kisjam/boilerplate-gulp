@@ -1,8 +1,7 @@
-@use 'global' as *;
+@use "global" as *;
 $step-gap: 5;
 
 @mixin gap {
-
 	@for $i from 0 through 20 {
 		&-#{$i * $step-gap} {
 			gap: #{$i * $step-gap}px;
@@ -24,19 +23,19 @@ $step-gap: 5;
 	@include gap;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:gap {
 		@include gap;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:gap {
 		@include gap;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:gap {
 		@include gap;
 	}

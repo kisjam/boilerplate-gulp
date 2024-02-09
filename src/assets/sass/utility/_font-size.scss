@@ -1,9 +1,9 @@
-@use 'global' as *;
+@use "global" as *;
 
 @mixin fz {
 	@for $i from 10 through 30 {
 		&-#{$i} {
-			font-size: #{$i * .1}rem;
+			font-size: #{$i * 0.1}rem;
 		}
 	}
 }
@@ -12,19 +12,19 @@
 	@include fz;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:fz {
 		@include fz;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:fz {
 		@include fz;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:fz {
 		@include fz;
 	}

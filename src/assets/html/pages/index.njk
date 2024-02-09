@@ -7,70 +7,68 @@
 
 {% block contents -%}
 
-<div class="hoge"></div>
 <main class="main">
-	<section>
-		<h2>概要</h2>
-		<p>静的サイトを作り始める際のスターターキットと、個人的な運用ルールまとめです。</p>
-		<div class="button">
-			<a href="/demo/">DEMO</a>
-		</div>
-		<p>
-			<label class="input-checkbox">
-				<input type="checkbox" class="input-checkbox__input" name="piyo">
-				<span class="input-checkbox__label">チェックボックスのサンプル</span>
-			</label>
-		</p>
-		<p class="sample">hogehoge</p>
+	<p class="sample">hoge</p>
 
-		<div class="accordion">
-			<button type="button" id="faq-01" data-accordion="faq-01-panel">
-				Accordion 1
+	<div class="accordion-item">
+		<button type="button" id="faq-01" data-accordion="faq-01-panel">
+			Accordion 1
+		</button>
+
+		<div id="faq-01-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
 			</button>
-
-			<div id="faq-01-panel">
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<button type="button" data-accordion-close>
-					閉じるボタン
-				</button>
-			</div>
 		</div>
-		<div class="accordion">
-			<button type="button" id="faq-02" data-accordion="faq-02-panel" aria-expanded="true">
-				Accordion 2
+	</div>
+	<div class="accordion-item">
+		<button type="button" id="faq-02" data-accordion="faq-02-panel">
+			Accordion 2
+		</button>
+
+		<div id="faq-02-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
 			</button>
-
-			<div id="faq-02-panel">
-				<p>最初から空いてるパターン</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-			</div>
 		</div>
-		<div class="accordion">
-			<button type="button" id="faq-03" data-accordion="faq-03-hoge">
-				エラーになるパターン
+	</div>
+	<div class="accordion-item">
+		<button type="button" id="faq-03" data-accordion="faq-03-panel">
+			Accordion 3
+		</button>
+
+		<div id="faq-03-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
 			</button>
-
-			<div id="faq-03-panel">
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-			</div>
 		</div>
+	</div>
 
-	</section>
+	<p>
+		<label class="input-checkbox">
+			<input type="checkbox" class="input-checkbox__input" name="piyo">
+			<span class="input-checkbox__label">チェックボックスのサンプル</span>
+		</label>
+	</p>
 </main>
-
 {%- endblock %}
 
 {% block js -%}{% endblock %}

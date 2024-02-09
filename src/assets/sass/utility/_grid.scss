@@ -3,7 +3,7 @@
 /*
 ----------------------------------------------------------------- */
 @use "sass:math";
-@use 'global' as *;
+@use "global" as *;
 
 @mixin grid {
 	display: grid;
@@ -25,19 +25,19 @@
 	@include grid;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:grid {
 		@include grid;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:grid {
 		@include grid;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:grid {
 		@include grid;
 	}

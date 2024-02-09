@@ -1,9 +1,9 @@
-@use 'global' as *;
+@use "global" as *;
 
 @mixin lh {
 	@for $i from 10 through 30 {
 		&-#{$i} {
-			line-height: #{$i * .1};
+			line-height: #{$i * 0.1};
 		}
 	}
 }
@@ -12,19 +12,19 @@
 	@include lh;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:lh {
 		@include lh;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:lh {
 		@include lh;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:lh {
 		@include lh;
 	}

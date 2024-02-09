@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 $step-width: 5;
 
 @mixin width {
@@ -67,7 +67,7 @@ $step-width: 5;
 	@include min-width;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:w {
 		@include width;
 	}
@@ -81,7 +81,7 @@ $step-width: 5;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:w {
 		@include width;
 	}
@@ -95,7 +95,7 @@ $step-width: 5;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:w {
 		@include width;
 	}

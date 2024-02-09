@@ -1,12 +1,10 @@
 @use "sass:math";
-@use 'global/variable-sass/' as var;
-
-$root-em: 16;
+@use "global/variable-sass/" as v;
 
 @function rem($font-size) {
-	@return #{math.div($font-size, $root-em)}rem;
+	@return #{math.div($font-size, v.$base-font-size)}rem;
 }
 
 @function vw($font-size, $viewport) {
-	@return 100 / $viewport * $font-size * 1vw;
+	@return math.div(100, $viewport) * $font-size * 1vw;
 }

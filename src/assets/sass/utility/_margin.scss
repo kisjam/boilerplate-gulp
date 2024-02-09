@@ -1,8 +1,7 @@
-@use 'global' as *;
+@use "global" as *;
 $step-margin: 4;
 
 @mixin margin {
-
 	@for $i from 0 through 50 {
 		&t-#{$i * $step-margin} {
 			margin-top: #{$i * $step-margin}px !important;
@@ -63,7 +62,7 @@ $step-margin: 4;
 	@include margin-negative;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:m {
 		@include margin;
 	}
@@ -73,7 +72,7 @@ $step-margin: 4;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:m {
 		@include margin;
 	}
@@ -83,7 +82,7 @@ $step-margin: 4;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:m {
 		@include margin;
 	}

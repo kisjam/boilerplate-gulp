@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 .accordion {
 	$this: &;
@@ -12,14 +12,14 @@
 
 		&::after,
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			right: 16px;
 			top: 50%;
 			width: 14px;
 			height: 2px;
 			background-color: #aaf;
-			transition: transform .3s ease;
+			transition: transform 0.3s ease;
 
 			#{$this}[open] & {
 				transform: rotate(360deg);
@@ -45,5 +45,6 @@
 		display: none;
 	}
 
-	&[open] {}
+	&[open] {
+	}
 }

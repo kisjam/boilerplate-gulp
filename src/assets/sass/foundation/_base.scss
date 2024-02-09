@@ -1,10 +1,5 @@
 @use "global" as *;
 
-html {
-	scroll-behavior: smooth;
-	scroll-padding-top: 100px;
-}
-
 body {
 	font-family: $ff-noto-sans;
 	color: $color-black;

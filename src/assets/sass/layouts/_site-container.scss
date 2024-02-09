@@ -1,0 +1,5 @@
+@use "global" as *;
+
+.site-container {
+	padding-top: var(--height-header);
+}

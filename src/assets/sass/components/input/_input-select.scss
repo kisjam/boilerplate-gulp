@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 /*
 /* Input select
@@ -16,7 +16,7 @@
 	display: inline-block;
 
 	&::after {
-		content: '';
+		content: "";
 		position: absolute;
 		z-index: 1;
 		top: 0;

@@ -3,10 +3,9 @@
 /*
 ----------------------------------------------------------------- */
 @use "sass:math";
-@use 'global' as *;
+@use "global" as *;
 
 @mixin flex {
-
 	display: flex;
 
 	&-forward {
@@ -144,19 +143,19 @@
 	@include flex;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:flex {
 		@include flex;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:flex {
 		@include flex;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:flex {
 		@include flex;
 	}

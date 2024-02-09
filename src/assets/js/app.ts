@@ -11,7 +11,9 @@ new ScrollAnimation();
 new SwipeFigure();
 new CheckScrolled();
 new SmoothScroll();
-new NavManager();
+new NavManager({
+	menuSelector: ".site-header__nav",
+});
 
 const accordionEls = document.querySelectorAll("[data-accordion]");
 accordionEls.forEach((accordionEl) => {

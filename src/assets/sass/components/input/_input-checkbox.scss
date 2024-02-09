@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 /*
 /* Input Checkbox
@@ -17,7 +17,7 @@
 	&__input {
 		display: none;
 
-		&:checked+#{$this}__label {
+		&:checked + #{$this}__label {
 			&::before {
 				background: #f00;
 			}
@@ -32,7 +32,7 @@
 		height: 48px;
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			left: 0;
 			top: 50%;

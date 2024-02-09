@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 /*
 /* Input Radio
@@ -17,7 +17,7 @@
 	&__input {
 		display: none;
 
-		&:checked+#{$this}__label {
+		&:checked + #{$this}__label {
 			border-color: #6cc;
 		}
 	}

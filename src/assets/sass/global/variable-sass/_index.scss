@@ -17,9 +17,13 @@ $color-assort: "";
 $color-accent: "";
 
 $breakpoints: (
-	desktop: 1200px,
-	tablet: 992px,
-	sp: 768px,
+	2xl: 1536px,
+	xl: 1280px,
+	lg: 1024px,
+	md: 768px,
+	sm: 640px,
 );
 
-$width-content: 1200px;
+$width-content: 1290px;
+$viewport-pc: 1920;
+$viewport-sp: 375;

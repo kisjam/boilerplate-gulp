@@ -14,7 +14,11 @@
 <meta property="og:locate" content="ja_JP">
 <meta property="og:site_name" content="">
 <title>Boilerplate for static website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/bundle.js" type="module"></script>
 </head>
 
 	<body class="index">
@@ -35,113 +39,83 @@
 			</ul>
 		</li>
 	</ul>
-	<div class="site-nav__download">
-		<a href="/Boilerplate.zip" target="_blank">Download</a>
-	</div>
 </nav>
 
 		</div>
 	</div>
 	<div class="site-header__menu-button">
 		<button class="site-menu-button">
-			<div class="site-menu-button__top"></div>
-			<div class="site-menu-button__middle"></div>
-			<div class="site-menu-button__bottom"></div>
+			<span class="site-menu-button__top"></span>
+			<span class="site-menu-button__middle"></span>
+			<span class="site-menu-button__bottom"></span>
 		</button>
 	</div>
 </header>
-<div class="site-menu">
-	<div class="site-menu__inner"><nav class="site-nav">
-	<ul class="site-nav__list">
-		<li class="site-nav__list-item"><a href="/">Top</a></li>
-		<li class="site-nav__list-item">
-			<a href="/sample/">Sample Parts</a>
-			<ul class="site-nav__child-list">
-				<li class="site-nav__child-list__item"><a href="#">Dummy link</a></li>
-				<li class="site-nav__child-list__item"><a href="#">Dummy link</a></li>
-				<li class="site-nav__child-list__item"><a href="#">Dummy link</a></li>
-			</ul>
-		</li>
-	</ul>
-	<div class="site-nav__download">
-		<a href="/Boilerplate.zip" target="_blank">Download</a>
-	</div>
-</nav>
-
-	</div>
-</div>
-<div id="dcms_layoutPageBlockPasteArea">
-				<div id="dcms_layoutPageBlock">
-					<div class="hoge"></div>
 <main class="main">
-	<section>
-		<h2>概要</h2>
-		<p>静的サイトを作り始める際のスターターキットと、個人的な運用ルールまとめです。</p>
-		<div class="button">
-			<a href="/demo/">DEMO</a>
-		</div>
-		<p>
-			<label class="input-checkbox">
-				<input type="checkbox" class="input-checkbox__input" name="piyo">
-				<span class="input-checkbox__label">チェックボックスのサンプル</span>
-			</label>
-		</p>
-		<p class="sample">hogehoge</p>
+	<p class="sample">hoge</p>
 
-		<div class="accordion">
-			<button type="button" id="faq-01" data-accordion="faq-01-panel">
-				Accordion 1
+	<div class="accordion-item">
+		<button type="button" id="faq-01" data-accordion="faq-01-panel">
+			Accordion 1
+		</button>
+
+		<div id="faq-01-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
 			</button>
-
-			<div id="faq-01-panel">
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<button type="button" data-accordion-close>
-					閉じるボタン
-				</button>
-			</div>
-		</div>
-		<div class="accordion">
-			<button type="button" id="faq-02" data-accordion="faq-02-panel" aria-expanded="true">
-				Accordion 2
-			</button>
-
-			<div id="faq-02-panel">
-				<p>最初から空いてるパターン</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-			</div>
-		</div>
-		<div class="accordion">
-			<button type="button" id="faq-03" data-accordion="faq-03-hoge">
-				エラーになるパターン
-			</button>
-
-			<div id="faq-03-panel">
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-				<p>Panel 1</p>
-			</div>
-		</div>
-
-	</section>
-</main>
-				</div>
-			</div><footer class="site-footer">
-	<div class="site-footer__inner">
-		<div class="site-footer__copyright">
-			<p class="footer-copyright"><small>kisjam.com</small></p>
 		</div>
 	</div>
-</footer></div>
-		<script src="/assets/js/bundle.js"></script></body>
+	<div class="accordion-item">
+		<button type="button" id="faq-02" data-accordion="faq-02-panel">
+			Accordion 2
+		</button>
+
+		<div id="faq-02-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
+			</button>
+		</div>
+	</div>
+	<div class="accordion-item">
+		<button type="button" id="faq-03" data-accordion="faq-03-panel">
+			Accordion 3
+		</button>
+
+		<div id="faq-03-panel">
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<p>Panel 1</p>
+			<button type="button" data-accordion-close>
+				閉じるボタン
+			</button>
+		</div>
+	</div>
+
+	<p>
+		<label class="input-checkbox">
+			<input type="checkbox" class="input-checkbox__input" name="piyo">
+			<span class="input-checkbox__label">チェックボックスのサンプル</span>
+		</label>
+	</p>
+</main><footer class="site-footer">
+	<div class="site-footer__inner">
+
+	</div>
+</footer>
+</div></body>
 </html>

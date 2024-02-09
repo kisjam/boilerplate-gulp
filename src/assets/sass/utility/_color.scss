@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 @mixin color {
 	&-red {
@@ -10,19 +10,19 @@
 	@include color;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:color {
 		@include color;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:color {
 		@include color;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:color {
 		@include color;
 	}

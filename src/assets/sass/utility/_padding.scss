@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 $step-padding: 4;
 
 @mixin padding {
@@ -25,19 +25,19 @@ $step-padding: 4;
 	@include padding;
 }
 
-@include mq(sp, true) {
+@include mq(md, true) {
 	.pc\:p {
 		@include padding;
 	}
 }
 
-@include mq(tablet) {
+@include mq(md) {
 	.md\:p {
 		@include padding;
 	}
 }
 
-@include mq(sp) {
+@include mq(sm) {
 	.sm\:p {
 		@include padding;
 	}
