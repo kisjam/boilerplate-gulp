@@ -1,9 +1,0 @@
-@use "global" as *;
-
-.sample {
-	@include mq(md) {
-		color: #f00;
-	}
-	font-size: rem(16);
-	font-size: vw(16, $viewport-pc);
-}
