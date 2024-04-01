@@ -2,7 +2,7 @@ import { dir } from "../config.mjs";
 import gulp from "gulp";
 import plumber from "gulp-plumber";
 import browserSync from "browser-sync";
-import dartSass from "sass";
+import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import sassGlob from "gulp-sass-glob-use-forward";

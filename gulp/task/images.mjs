@@ -9,7 +9,7 @@ import { dir } from "../config.mjs";
 
 const images = () => {
 	return gulp
-		.src(dir.src.images + "**/*.{jpg,png,webp,svg}", {
+		.src(dir.src.images + "**/*.{jpg,png,webp,svg,gif}", {
 			encoding: false,
 		})
 		.pipe(plumber())
@@ -20,7 +20,8 @@ const images = () => {
 					file.isNull() ||
 					file.isDirectory() ||
 					path.extname(file.path).toLowerCase() === ".webp" ||
-					path.extname(file.path).toLowerCase() === ".svg"
+					path.extname(file.path).toLowerCase() === ".svg" ||
+					path.extname(file.path).toLowerCase() === ".gif"
 				) {
 					cb(null, file);
 					return;
