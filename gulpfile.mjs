@@ -18,11 +18,6 @@ export const watch = () => {
 	gulp.watch(["*.html", "*.php", "*.njk"]).on("change", function () {
 		browserSync.reload();
 	});
-	gulp.watch(dir.src.images + "**/*").on("unlink", async (path) => {
-		const distPath = path.replace(dir.src.images, dir.build.images);
-		const deletedFilePaths = await deleteAsync([distPath]);
-		console.log("Deleted files:\n", deletedFilePaths.join("\n"));
-	});
 	gulp.watch(dir.src.public + "**/*").on("unlink", async (path) => {
 		const distPath = path.replace(dir.src.public, dir.build.public);
 		const deletedFilePaths = await deleteAsync([distPath]);

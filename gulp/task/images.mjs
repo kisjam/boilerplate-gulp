@@ -1,27 +1,45 @@
-import { dir } from "../config.mjs";
+import path from "node:path";
 import gulp from "gulp";
+import changed from "gulp-changed";
 import plumber from "gulp-plumber";
-import newer from "gulp-newer";
-import imagemin from "gulp-imagemin";
-import imageminGifsicle from "imagemin-gifsicle";
-import imageminMozjpeg from "imagemin-mozjpeg";
-import imageminPngquant from "imagemin-pngquant";
 import browserSync from "browser-sync";
+import through2 from "through2";
+import sharp from "sharp";
+import { dir } from "../config.mjs";
 
 const images = () => {
 	return gulp
-		.src(dir.src.images + "**/*")
+		.src(dir.src.images + "**/*.{jpg,png,webp,svg}", {
+			encoding: false,
+		})
 		.pipe(plumber())
-		.pipe(newer(dir.build.images))
+		.pipe(changed(dir.build.images, { extension: ".webp" }))
 		.pipe(
-			imagemin([
-				imageminGifsicle({ interlaced: true }),
-				imageminMozjpeg({ quality: 75, progressive: true }),
-				imageminPngquant({
-					quality: [0.65, 0.8],
-					speed: 1,
-				}),
-			])
+			through2.obj(function (file, _, cb) {
+				if (
+					file.isNull() ||
+					file.isDirectory() ||
+					path.extname(file.path).toLowerCase() === ".webp" ||
+					path.extname(file.path).toLowerCase() === ".svg"
+				) {
+					cb(null, file);
+					return;
+				}
+
+				sharp(file.contents)
+					.webp()
+					.toBuffer()
+					.then((data) => {
+						file.contents = data;
+						file.path = path.join(
+							path.dirname(file.path),
+							path.basename(file.path, path.extname(file.path)) + ".webp"
+						);
+
+						return cb(null, file);
+					})
+					.catch((err) => cb(err));
+			})
 		)
 		.pipe(gulp.dest(dir.build.images))
 		.pipe(browserSync.stream());

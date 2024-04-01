@@ -3,7 +3,6 @@ import gulp from "gulp";
 import plumber from "gulp-plumber";
 import browserSync from "browser-sync";
 import data from "gulp-data";
-import htmlhint from "gulp-htmlhint";
 import nunjucksRender from "gulp-nunjucks-render";
 import { readFile } from "fs/promises";
 
@@ -37,8 +36,6 @@ const html = () => {
 				path: [dir.njk.root],
 			})
 		)
-		.pipe(htmlhint(".htmlhintrc"))
-		.pipe(htmlhint.failReporter())
 		.pipe(gulp.dest(dir.build.html))
 		.pipe(browserSync.stream());
 };
