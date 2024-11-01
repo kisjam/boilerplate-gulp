@@ -2,12 +2,15 @@
 
 :root {
 	--padding-side: 80px;
-	--height-header: 153px;
+	--height-header: 120px;
 	--leading-trim: calc((1em - 1lh) / 2);
-	// margin-block: var(--leading-trim);
+
+	@include mq(lg) {
+		--padding-side: 40px;
+	}
 
 	@include mq(md) {
-		--padding-side: 25px;
-		--height-header: 58px;
+		--padding-side: 24px;
+		--height-header: 64px;
 	}
 }

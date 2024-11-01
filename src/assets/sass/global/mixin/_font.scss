@@ -9,19 +9,6 @@
 	@return math.div(100, $viewport) * $font-size * 1vw;
 }
 
-@mixin leading-trim($line-height) {
-	&::before {
-		content: "";
-		display: table;
-		margin-bottom: calc((1 - #{$line-height}) * 0.5em);
-	}
-	&::after {
-		content: "";
-		display: table;
-		margin-top: calc((1 - #{$line-height}) * 0.5em);
-	}
-}
-
 @mixin paragraph($font-size, $line-height: 28, $letter-spacing: null) {
 	font-size: #{math.div($font-size, var.$base-font-size)}rem;
 	line-height: math.div($line-height, $font-size);

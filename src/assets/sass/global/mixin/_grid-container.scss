@@ -1,0 +1,13 @@
+@use "global/variable-sass/" as var;
+@use "global/mixin/_media-query" as m;
+
+@mixin grid-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 40px;
+
+	@include m.mq(md) {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 24px;
+	}
+}
