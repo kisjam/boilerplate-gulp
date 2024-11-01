@@ -3,6 +3,8 @@
 :root {
 	--padding-side: 80px;
 	--height-header: 153px;
+	--leading-trim: calc((1em - 1lh) / 2);
+	// margin-block: var(--leading-trim);
 
 	@include mq(md) {
 		--padding-side: 25px;
