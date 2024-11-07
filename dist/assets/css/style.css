@@ -148,12 +148,18 @@ textarea {
 ----------------------------------------------------------------- */
 :root {
   --padding-side: 80px;
-  --height-header: 153px;
+  --height-header: 120px;
+  --leading-trim: calc((1em - 1lh) / 2);
+}
+@media screen and (max-width: 1024px) {
+  :root {
+    --padding-side: 40px;
+  }
 }
 @media screen and (max-width: 768px) {
   :root {
-    --padding-side: 25px;
-    --height-header: 58px;
+    --padding-side: 24px;
+    --height-header: 64px;
   }
 }
 
@@ -166,6 +172,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-feature-settings: "palt";
           font-feature-settings: "palt";
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
 }
 
 img {
@@ -173,16 +182,8 @@ img {
   height: auto;
 }
 
-a:link {
+a {
   color: #333;
-}
-
-a:visited {
-  color: #333;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 .site-container {
