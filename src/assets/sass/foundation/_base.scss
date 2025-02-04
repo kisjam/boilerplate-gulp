@@ -4,7 +4,8 @@ body {
 	font-family: $ff-noto-sans;
 	color: $color-black;
 	font-size: rem(16);
-	-webkit-text-size-adjust: 100%;
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: "palt";
